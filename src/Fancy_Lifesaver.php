@@ -1,6 +1,6 @@
 <?php
 
-class Fancy_Livesaver
+class Fancy_Lifesaver
 {
     const VERSION = FANCY_LIFESAVER_VERSION;
     const PLUGIN_URL = FANCY_LIFESAVER_PLUGIN_URL;
@@ -15,6 +15,7 @@ class Fancy_Livesaver
     {
         add_action('admin_enqueue_scripts', [$this, 'load_assets']);
         add_action('admin_footer', [$this, 'render_template']);
+        add_action('admin_bar_menu', [$this, 'admin_bar_item'], 1000);
     }
 
     public function load_assets()
@@ -26,5 +27,17 @@ class Fancy_Livesaver
     public function render_template()
     {
         include_once self::PLUGIN_DIR.'/templates/base.html.php';
+    }
+
+    public function admin_bar_item($admin_bar)
+    {
+        if (!is_admin()) {
+            $icon = '<span class="ab-icon dashicons dashicons-sos"></span>';
+            $admin_bar->add_menu([
+                'id'    => 'fb-help-button',
+                'title' => $icon.' <span class="ab-label">'.__('Help').'</span>',
+                'href'  => '#',
+            ]);
+        }
     }
 }
