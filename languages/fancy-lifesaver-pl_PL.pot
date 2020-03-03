@@ -1,0 +1,40 @@
+# Copyright (C) 2020 FancyBox
+# This file is distributed under the same license as the Fancy Lifesaver plugin.
+msgid ""
+msgstr ""
+"Project-Id-Version: Fancy Lifesaver 1.0.0\n"
+"Report-Msgid-Bugs-To: https://wordpress.org/support/plugin/fancy-lifesaver\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"POT-Creation-Date: 2020-03-03T12:08:49+01:00\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"X-Generator: WP-CLI 2.2.0\n"
+"X-Domain: fancy-lifesaver\n"
+
+#. Plugin Name of the plugin
+msgid "Fancy Lifesaver"
+msgstr ""
+
+#. Plugin URI of the plugin
+#. Author URI of the plugin
+msgid "https://www.fancybox.pl/"
+msgstr ""
+
+#. Description of the plugin
+msgid "Lifebuoy for your Wordpress"
+msgstr "Koło ratunkowe dla Twojego Wordpress'a"
+
+#. Author of the plugin
+msgid "FancyBox"
+msgstr ""
+
+#: src/Fancy_Lifesaver.php:34
+msgid "Help"
+msgstr "Pomocy"
+
+#: templates/base.html.php:4
+msgid "Need help?"
+msgstr "Potrzebujesz pomocy?"

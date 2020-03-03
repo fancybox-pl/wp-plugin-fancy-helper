@@ -8,14 +8,10 @@ class Fancy_Lifesaver
 
     public function __construct()
     {
-        $this->init();
-    }
-
-    public function init()
-    {
         add_action('admin_enqueue_scripts', [$this, 'load_assets']);
         add_action('admin_footer', [$this, 'render_template']);
         add_action('admin_bar_menu', [$this, 'admin_bar_item'], 1000);
+        add_action('plugins_loaded', [$this, 'load_languages']);
     }
 
     public function load_assets()
@@ -35,9 +31,14 @@ class Fancy_Lifesaver
             $icon = '<span class="ab-icon dashicons dashicons-sos"></span>';
             $admin_bar->add_menu([
                 'id'    => 'fb-help-button',
-                'title' => $icon.' <span class="ab-label">'.__('Help').'</span>',
+                'title' => $icon.' <span class="ab-label">'.__('Help', 'fancy-lifesaver').'</span>',
                 'href'  => '#',
             ]);
         }
+    }
+
+    public function load_languages()
+    {
+        load_plugin_textdomain('fancy-lifesaver', FALSE, '/fancy-lifesaver/languages/' );
     }
 }

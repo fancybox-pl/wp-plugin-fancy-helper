@@ -8,7 +8,7 @@
  * @wordpress-plugin
  * Plugin Name:       Fancy Lifesaver
  * Plugin URI:        https://www.fancybox.pl/
- * Description:       Koło ratunkowe dla Twojego Wordpress'a
+ * Description:       Lifebuoy for your Wordpress
  * Version:           1.0.0
  * Author:            FancyBox
  * Author URI:        https://www.fancybox.pl/
