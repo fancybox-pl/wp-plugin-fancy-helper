@@ -58,20 +58,3 @@
 .fancy-lifesaver__widget:hover .fancy-lifesaver__widget-label {
   display: block;
 }
-
-.fancy-lifesaver__widget-close {
-  position: absolute;
-  right: 5px;
-  top: -1px;
-  font-family: Arial;
-  font-weight: bold;
-  padding: 2px 3px;
-  font-size: 14px;
-  width: 13px;
-  text-align: center;
-  color: #999;
-}
-
-.fancy-lifesaver__widget-close:hover {
-  color: #000;
-}
