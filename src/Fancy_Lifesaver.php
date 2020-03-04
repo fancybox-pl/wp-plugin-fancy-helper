@@ -18,6 +18,7 @@ class Fancy_Lifesaver
         add_action('admin_bar_menu', [$this, 'admin_bar_link'], 1000);
         add_action('admin_menu', [$this, 'options_page']);
         add_action('plugin_action_links_'.self::PLUGIN_BASENAME, [$this, 'plugin_action_links']);
+        add_action('admin_init', [$this, 'register_settings']);
     }
 
     public function load_assets()
@@ -55,18 +56,23 @@ class Fancy_Lifesaver
             'Fancy Lifesaver '.__('Settings', 'fancy-lifesaver'),
             'Fancy Lifesaver',
             'manage_options',
-            'fancy-lifesaver',
+            'fancy_lifesaver',
             [$this->controller, 'options_template']
         );
     }
 
     public function plugin_action_links(array $links_array): array
     {
-        $settings_url = admin_url('options-general.php?page=fancy-lifesaver');
+        $settings_url = admin_url('options-general.php?page=fancy_lifesaver');
         $settings_title = __('Settings', 'fancy-lifesaver');
 
         array_unshift($links_array, '<a href="'.$settings_url.'">'.$settings_title.'</a>');
 
         return $links_array;
+    }
+
+    public function register_settings()
+    {
+        register_setting('fancy_lifesaver_plugin_page', 'fancy_lifesaver_settings');
     }
 }

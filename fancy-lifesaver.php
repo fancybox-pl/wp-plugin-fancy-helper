@@ -32,7 +32,3 @@ require_once plugin_dir_path(__FILE__).'src/Fancy_Lifesaver.php';
 require_once plugin_dir_path(__FILE__).'src/Controller/Fancy_Lifesaver_Controller.php';
 
 $fancy_livesaver = new Fancy_Lifesaver();
-
-add_action('admin_init', function () {
-    register_setting('fancy-lifesaver', 'fancy-lifesaver_visible_widget');
-});
