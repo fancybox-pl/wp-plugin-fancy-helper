@@ -39,7 +39,7 @@ class Fancy_Lifesaver
 
     public function admin_bar_link(\WP_Admin_Bar $admin_bar)
     {
-        if (!is_admin()) {
+        if (!is_admin() && !empty(get_option('fancy_lifesaver_admin_bar_link_visible', 1))) {
             $icon = '<span class="ab-icon dashicons dashicons-sos"></span>';
             $title = __('Help', 'fancy-lifesaver');
             $admin_bar->add_menu([
@@ -73,6 +73,7 @@ class Fancy_Lifesaver
 
     public function register_settings()
     {
-        register_setting('fancy_lifesaver_plugin_page', 'fancy_lifesaver_settings');
+        register_setting('fancy_lifesaver_plugin_page', 'fancy_lifesaver_lifebuoy_visible');
+        register_setting('fancy_lifesaver_plugin_page', 'fancy_lifesaver_admin_bar_link_visible');
     }
 }

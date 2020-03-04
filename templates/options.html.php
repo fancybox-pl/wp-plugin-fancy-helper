@@ -15,8 +15,8 @@
                 <input
                   id="fancy_lifesaver_lifebuoy_visible"
                   type="checkbox"
-                  name="fancy_lifesaver_settings[fancy_lifesaver_lifebuoy_visible]"
-                  <?php if (!empty($options['fancy_lifesaver_lifebuoy_visible'])): ?>checked="checked"<?php endif; ?>
+                  name="fancy_lifesaver_lifebuoy_visible"
+                  <?php if (!empty(get_option('fancy_lifesaver_lifebuoy_visible', 1))): ?>checked="checked"<?php endif; ?>
                   value="1">
                 <?php _e('Show lifebuoy in admin panel', 'fancy-lifesaver') ?>
               </label>
@@ -31,8 +31,8 @@
                 <input
                   id="fancy_lifesaver_admin_bar_link_visible"
                   type="checkbox"
-                  name="fancy_lifesaver_settings[fancy_lifesaver_admin_bar_link_visible]"
-                  <?php if(!empty($options['fancy_lifesaver_admin_bar_link_visible'])): ?>checked="checked"<?php endif; ?>
+                  name="fancy_lifesaver_admin_bar_link_visible"
+                  <?php if (!empty(get_option('fancy_lifesaver_admin_bar_link_visible', 1))): ?>checked="checked"<?php endif; ?>
                   value="1">
                 <?php _e('Show help link in admin bar', 'fancy-lifesaver') ?>
               </label>

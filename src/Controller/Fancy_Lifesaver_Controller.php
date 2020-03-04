@@ -14,8 +14,6 @@ class Fancy_Lifesaver_Controller
 
     public function options_template()
     {
-        $options = get_option('fancy_lifesaver_settings');
-
         include_once Fancy_Lifesaver::PLUGIN_DIR.'/templates/options.html.php';
     }
 }
