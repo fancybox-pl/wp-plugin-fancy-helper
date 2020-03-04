@@ -5,13 +5,18 @@ class Fancy_Lifesaver
     const VERSION = FANCY_LIFESAVER_VERSION;
     const PLUGIN_URL = FANCY_LIFESAVER_PLUGIN_URL;
     const PLUGIN_DIR = FANCY_LIFESAVER_PLUGIN_DIR;
+    const PLUGIN_BASENAME = FANCY_LIFESAVER_PLUGIN_BASENAME;
+
+    private $controler;
 
     public function __construct()
     {
         add_action('admin_enqueue_scripts', [$this, 'load_assets']);
-        add_action('admin_footer', [$this, 'render_template']);
-        add_action('admin_bar_menu', [$this, 'admin_bar_item'], 1000);
         add_action('plugins_loaded', [$this, 'load_languages']);
+        add_action('admin_bar_menu', [$this, 'admin_bar_item'], 1000);
+        add_action('plugin_action_links_'.self::PLUGIN_BASENAME, [$this, 'plugin_action_links']);
+
+        $this->load_controllers();
     }
 
     public function load_assets()
@@ -20,9 +25,14 @@ class Fancy_Lifesaver
         wp_enqueue_script('fancy_livesaver_js', self::PLUGIN_URL.'assets/js/app.js');
     }
 
-    public function render_template()
+    public function load_languages()
     {
-        include_once self::PLUGIN_DIR.'/templates/base.html.php';
+        load_plugin_textdomain('fancy-lifesaver', FALSE, '/fancy-lifesaver/languages/' );
+    }
+
+    public function load_controllers()
+    {
+        $this->controller = new Fancy_Lifesaver_Controller();
     }
 
     public function admin_bar_item($admin_bar)
@@ -37,8 +47,10 @@ class Fancy_Lifesaver
         }
     }
 
-    public function load_languages()
+    public function plugin_action_links(array $links_array): array
     {
-        load_plugin_textdomain('fancy-lifesaver', FALSE, '/fancy-lifesaver/languages/' );
+        array_unshift($links_array, '<a href="#">'.__('Settings', 'fancy-lifesaver').'</a>' );
+
+        return $links_array;
     }
 }
