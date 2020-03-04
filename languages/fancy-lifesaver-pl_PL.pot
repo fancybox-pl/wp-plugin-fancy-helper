@@ -31,10 +31,40 @@ msgstr "Koło ratunkowe dla Twojego Wordpress'a"
 msgid "FancyBox"
 msgstr ""
 
-#: src/Fancy_Lifesaver.php:34
+#: src/Fancy_Lifesaver.php:43
+#: templates/widget.html.php:3
 msgid "Help"
-msgstr "Pomocy"
+msgstr "Pomoc"
 
-#: templates/base.html.php:4
+#: src/Fancy_Lifesaver.php:55
+#: src/Fancy_Lifesaver.php:66
+msgid "Settings"
+msgstr "Ustawienia"
+
+#: templates/options.html.php:2
+msgid "Fancy Lifesaver Settings"
+msgstr "Fancy Lifesaver Ustawienia"
+
+#: templates/options.html.php:4
+msgid "Visibility settings of Fancy Lifesaver"
+msgstr "Ustawienia widoczności Fancy Lifesaver"
+
+#: templates/options.html.php:8
+msgid "Visibility lifebuoy"
+msgstr "Widoczność koła ratunkowego"
+
+#: templates/options.html.php:13
+msgid "Show lifebuoy in admin panel"
+msgstr "Pokaż koło ratunkowe w panelu administracyjnym"
+
+#: templates/options.html.php:19
+msgid "Visibility in admin bar"
+msgstr "Widoczność w belce administratora"
+
+#: templates/options.html.php:24
+msgid "Show help link in admin bar"
+msgstr "Pokaż link w belce administratora"
+
+#: templates/widget.html.php:4
 msgid "Need help?"
 msgstr "Potrzebujesz pomocy?"
