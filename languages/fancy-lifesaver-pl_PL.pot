@@ -31,13 +31,17 @@ msgstr "Koło ratunkowe dla Twojego Wordpress'a"
 msgid "FancyBox"
 msgstr ""
 
-#: src/Fancy_Lifesaver.php:43
-#: templates/widget.html.php:3
+#: fancy-lifesaver.php:34
+msgid "Danger - You are using a very old version of PHP, update it as soon as possible."
+msgstr "Niebezpieczeństwo - Korzystasz z bardzo starej wersji PHP, zaktualizuj ją jak najszybciej"
+
+#: src/Fancy_Lifesaver.php:44
+#: templates/widget.html.php:4
 msgid "Help"
 msgstr "Pomoc"
 
-#: src/Fancy_Lifesaver.php:55
-#: src/Fancy_Lifesaver.php:66
+#: src/Fancy_Lifesaver.php:56
+#: src/Fancy_Lifesaver.php:67
 msgid "Settings"
 msgstr "Ustawienia"
 
@@ -45,26 +49,26 @@ msgstr "Ustawienia"
 msgid "Fancy Lifesaver Settings"
 msgstr "Fancy Lifesaver Ustawienia"
 
-#: templates/options.html.php:4
+#: templates/options.html.php:6
 msgid "Visibility settings of Fancy Lifesaver"
 msgstr "Ustawienia widoczności Fancy Lifesaver"
 
-#: templates/options.html.php:8
+#: templates/options.html.php:11
 msgid "Visibility lifebuoy"
 msgstr "Widoczność koła ratunkowego"
 
-#: templates/options.html.php:13
+#: templates/options.html.php:21
 msgid "Show lifebuoy in admin panel"
 msgstr "Pokaż koło ratunkowe w panelu administracyjnym"
 
-#: templates/options.html.php:19
+#: templates/options.html.php:27
 msgid "Visibility in admin bar"
 msgstr "Widoczność w belce administratora"
 
-#: templates/options.html.php:24
+#: templates/options.html.php:37
 msgid "Show help link in admin bar"
 msgstr "Pokaż link w belce administratora"
 
-#: templates/widget.html.php:4
+#: templates/widget.html.php:5
 msgid "Need help?"
 msgstr "Potrzebujesz pomocy?"
