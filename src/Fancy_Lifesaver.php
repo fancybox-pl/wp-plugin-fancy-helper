@@ -27,7 +27,7 @@ class Fancy_Lifesaver
 
     public function load_languages()
     {
-        load_plugin_textdomain('fancy-lifesaver', FALSE, '/fancy-lifesaver/languages/' );
+        load_plugin_textdomain('fancy-lifesaver', false, '/fancy-lifesaver/languages/');
     }
 
     public function load_controllers()
@@ -35,7 +35,7 @@ class Fancy_Lifesaver
         $this->controller = new Fancy_Lifesaver_Controller();
     }
 
-    public function admin_bar_item($admin_bar)
+    public function admin_bar_item(\WP_Admin_Bar $admin_bar)
     {
         if (!is_admin()) {
             $icon = '<span class="ab-icon dashicons dashicons-sos"></span>';
@@ -49,7 +49,7 @@ class Fancy_Lifesaver
 
     public function plugin_action_links(array $links_array): array
     {
-        array_unshift($links_array, '<a href="#">'.__('Settings', 'fancy-lifesaver').'</a>' );
+        array_unshift($links_array, '<a href="#">'.__('Settings', 'fancy-lifesaver').'</a>');
 
         return $links_array;
     }
