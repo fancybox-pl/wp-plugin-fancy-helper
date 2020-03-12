@@ -11,14 +11,14 @@ class Fancy_Lifesaver
 
     public function __construct()
     {
-        $this->load_controllers();
-
         add_action('admin_enqueue_scripts', [$this, 'load_assets']);
         add_action('plugins_loaded', [$this, 'load_languages']);
         add_action('admin_bar_menu', [$this, 'admin_bar_link'], 1000);
         add_action('admin_menu', [$this, 'options_page']);
         add_action('plugin_action_links_'.self::PLUGIN_BASENAME, [$this, 'plugin_action_links']);
         add_action('admin_init', [$this, 'register_settings']);
+
+        $this->controller = new Fancy_Lifesaver_Controller();
     }
 
     public function load_assets()
@@ -30,11 +30,6 @@ class Fancy_Lifesaver
     public function load_languages()
     {
         load_plugin_textdomain('fancy-lifesaver', false, '/fancy-lifesaver/languages/');
-    }
-
-    public function load_controllers()
-    {
-        $this->controller = new Fancy_Lifesaver_Controller();
     }
 
     public function admin_bar_link(\WP_Admin_Bar $admin_bar)
@@ -57,7 +52,7 @@ class Fancy_Lifesaver
             'Fancy Lifesaver',
             'manage_options',
             'fancy_lifesaver',
-            [$this->controller, 'options_template']
+            ['Fancy_Lifesaver_Controller', 'options_template']
         );
     }
 

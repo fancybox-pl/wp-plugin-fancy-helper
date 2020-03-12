@@ -8,6 +8,14 @@ class Fancy_Lifesaver_Controller
         add_action('admin_footer', [$this, 'modal_template']);
     }
 
+    public function send_help_message()
+    {
+        return [
+            'status' => 'success',
+            'data' => 'Lorem ipsum',
+        ];
+    }
+
     public function widget_template()
     {
         include_once Fancy_Lifesaver::PLUGIN_DIR.'/templates/widget.html.php';
