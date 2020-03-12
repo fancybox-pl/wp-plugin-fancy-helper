@@ -130,7 +130,7 @@
   margin-bottom: 20px;
 }
 
-.fancy-lifesaver__modal-field.required label:after{
+.fancy-lifesaver__modal-field.required label:after {
   content: '*';
   margin-left: 3px;
   color: #e30;
@@ -167,4 +167,88 @@
 
 .fancy-lifesaver__modal-submit:hover {
   background: #FEBF27;
+}
+
+.fancy-lifesaver__modal-icons .dashicons {
+  line-height: 21px;
+}
+
+.fancy-lifesaver__modal-icons .dashicons-image-rotate {
+  display: none;
+  font-size: 14px;
+  width: 20px;
+  height: 20px;
+  position: relative;
+  animation: fancy-rotation 2s infinite linear;
+}
+
+.fancy-lifesaver__modal-icons .dashicons-image-rotate:before {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+@keyframes fancy-rotation {
+  from {
+    transform: rotate(359deg);
+  }
+
+  to {
+    transform: rotate(0deg);
+  }
+}
+
+.fancy-lifesaver__modal-submit.fancy-lifesaver__modal-submit--sending .dashicons-yes {
+  display: none;
+}
+
+.fancy-lifesaver__modal-submit.fancy-lifesaver__modal-submit--sending .dashicons-image-rotate {
+  display: inline-block;
+}
+
+.fancy-lifesaver-notice {
+  box-sizing: border-box;
+  position: fixed;
+  z-index: 100;
+  top: 50%;
+  left: 50%;
+  width: 100%;
+  max-width: 700px;
+  padding: 23px 63px 23px 63px;
+  box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.15);
+  transform: translate(-50%, -50%);
+  border-radius: 5px;
+  font-weight: 600;
+  font-size: 22px;
+  line-height: 22px;
+  background: #fff url('/wp-content/plugins/fancy-lifesaver/assets/svg/fancy-cube.svg') no-repeat left 20px center;
+}
+
+.fancy-lifesaver-notice.fancy-lifesaver-notice--error {
+  background-color: #ff7a7a;
+}
+
+.fancy-lifesaver-notice .dismiss {
+  position: absolute;
+  top: 50%;
+  transform: translate(0, -50%);
+  right: 15px;
+  width: 30px;
+  height: 30px;
+  cursor: pointer;
+  text-align: center;
+}
+
+.fancy-lifesaver-notice .dismiss:before {
+  content: "\f335";
+  font-family: dashicons;
+  line-height: 30px;
+  font-weight: 400;
+  font-size: 22px;
+  transition: all 0.1s ease-in;
+}
+
+.fancy-lifesaver-notice:hover .dismiss {
+  color: #DB2792;
 }
