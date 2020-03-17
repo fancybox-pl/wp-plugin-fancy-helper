@@ -37,7 +37,7 @@ class Fancy_Lifesaver_Controller
             <p><b>'.__('WP version', 'fancy-lifesaver').'</b>: v'.$wp_version.'</p>
             <p><b>'.__('User Agent', 'fancy-lifesaver').'</b>: '.$_SERVER['HTTP_USER_AGENT'].'</p>
             <p><b>'.__('Theme', 'fancy-lifesaver').'</b>: '.$theme->display('Name').' v'.$theme->display('Version').'</p>
-            <p><b>'.__('Instralled plugins', 'fancy-lifesaver').'</b>:</p>
+            <p><b>'.__('Installed plugins', 'fancy-lifesaver').'</b>:</p>
             <ul>
         ';
         foreach ($plugins as $plugin) {

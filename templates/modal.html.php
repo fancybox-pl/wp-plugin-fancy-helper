@@ -26,7 +26,10 @@
         <div class="fancy-lifesaver__modal-field required">
           <input id="fancy-lifesaver-acceptance" name="fancy-lifesaver-acceptance" type="checkbox" class="fancy-lifesaver__modal-input-checkbox" required>
           <label for="fancy-lifesaver-acceptance" class="fancy-lifesaver__modal-label-checkbox">
-          <?php printf(__('You agree to send information to the address %s about your website (url, name and version of the template and plugins, PHP version and information about your browser) and data from this form. The information you submit will be needed to diagnose the problem.'), Fancy_Lifesaver::DELIVERY_ADDRESS);?>
+          <?php
+            /* translators: %s: delivery email address */
+            printf(__('You agree to send information to the address %s about your website (url, name and version of the template and plugins, PHP version and information about your browser) and data from this form. The information you submit will be needed to diagnose the problem.', 'fancy-lifesaver'), Fancy_Lifesaver::DELIVERY_ADDRESS);
+          ?>
           </label>
         </div>
         <div class="fancy-lifesaver__modal-field" style="text-align: center">
