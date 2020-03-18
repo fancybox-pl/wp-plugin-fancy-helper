@@ -24,8 +24,8 @@ msgid "https://www.fancybox.pl/"
 msgstr ""
 
 #. Description of the plugin
-msgid "Lifebuoy for your Wordpress"
-msgstr "Koło ratunkowe dla Twojego Wordpress'a"
+msgid "Lifebuoy for your Wordpress. If you have a problem with your site, it works too slowly, something has spilled out, or maybe you want to refresh appearance, change the functionality? You don't know how to do it? Use the lifebuoy and write to us and we will professionally take care of your website."
+msgstr "Koło ratunkowe dla Twojego Wordpress'a. Jeżeli masz problem ze swoją stroną, działa zbyt wolno, coś się „wysypało/rozjechało”, a może chcesz odświeżyć jej wygląd lub zmienić funkcjonalność? Nie wiesz jak to zrobić? Skorzystaj z koła ratunkowego i napisz do nas a profesjonalnie zajmiemy się Twoją stroną."
 
 #. Author of the plugin
 msgid "FancyBox"
@@ -111,8 +111,8 @@ msgstr "Opisz swój problem"
 
 #. translators: %s: delivery email address
 #: templates/modal.html.php:31
-msgid "You agree to send information to the address %s about your website (url, name and version of the template and plugins, PHP version and information about your browser) and data from this form. The information you submit will be needed to diagnose the problem."
-msgstr "Wyrażasz zgodę na przesłanie informacji na adres %s o swojej stronie (adresu url, nazwy i wersji szablonu oraz wtyczek, wersji PHP i informacji o Twojej przeglądarce) oraz danych z tego formularza. Przesłane informacje będą potrzebne do zdiagnozowania problemu."
+msgid "You agree to send information to the address %s about your website (url, version of the template and plugins, PHP version and information about your browser) and data from this form. The information you submit will be needed to diagnose the problem."
+msgstr "Wyrażasz zgodę na przesłanie informacji na adres %s o swojej stronie (adresu url, wersji szablonu oraz wtyczek, wersji PHP i informacji o Twojej przeglądarce) oraz danych z tego formularza. Przesłane informacje będą potrzebne do zdiagnozowania problemu."
 
 #: templates/modal.html.php:41
 msgid "Send"

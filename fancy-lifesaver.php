@@ -8,7 +8,7 @@
  * @wordpress-plugin
  * Plugin Name:       Fancy Lifesaver
  * Plugin URI:        https://www.fancybox.pl/
- * Description:       Lifebuoy for your Wordpress
+ * Description:       Lifebuoy for your Wordpress. If you have a problem with your site, it works too slowly, something has spilled out, or maybe you want to refresh appearance, change the functionality? You don't know how to do it? Use the lifebuoy and write to us and we will professionally take care of your website.
  * Version:           1.0.0
  * Author:            FancyBox
  * Author URI:        https://www.fancybox.pl/
