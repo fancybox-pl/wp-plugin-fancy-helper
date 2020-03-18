@@ -9,7 +9,7 @@ msgstr ""
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"POT-Creation-Date: 2020-03-17T15:13:13+01:00\n"
+"POT-Creation-Date: 2020-03-18T12:28:35+01:00\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "X-Generator: WP-CLI 2.2.0\n"
 "X-Domain: fancy-lifesaver\n"
@@ -44,22 +44,22 @@ msgid "Fancy Lifesaver - new issue"
 msgstr "Fancy Lifesaver - nowe zgłoszenie"
 
 #: src/Controller/Fancy_Lifesaver_Controller.php:30
-#: templates/modal.html.php:11
+#: templates/modal.html.php:12
 msgid "Name and surname / company name"
 msgstr "Imię i nazwisko / nazwa firmy"
 
 #: src/Controller/Fancy_Lifesaver_Controller.php:31
-#: templates/modal.html.php:15
+#: templates/modal.html.php:16
 msgid "Contact email address"
 msgstr "Adres email do kontaktu"
 
 #: src/Controller/Fancy_Lifesaver_Controller.php:32
-#: templates/modal.html.php:19
+#: templates/modal.html.php:20
 msgid "Phone number"
 msgstr "Numer telefonu"
 
 #: src/Controller/Fancy_Lifesaver_Controller.php:33
-#: templates/modal.html.php:23
+#: templates/modal.html.php:24
 msgid "Description of the problem"
 msgstr "Opis problemu"
 
@@ -72,26 +72,30 @@ msgid "Site url"
 msgstr "Adres url"
 
 #: src/Controller/Fancy_Lifesaver_Controller.php:37
+msgid "Send from url"
+msgstr "Wysłano z url"
+
+#: src/Controller/Fancy_Lifesaver_Controller.php:38
 msgid "WP version"
 msgstr "Wersja WP"
 
-#: src/Controller/Fancy_Lifesaver_Controller.php:38
+#: src/Controller/Fancy_Lifesaver_Controller.php:39
 msgid "User Agent"
 msgstr "User Agent"
 
-#: src/Controller/Fancy_Lifesaver_Controller.php:39
+#: src/Controller/Fancy_Lifesaver_Controller.php:40
 msgid "Theme"
 msgstr "Szablon"
 
-#: src/Controller/Fancy_Lifesaver_Controller.php:40
+#: src/Controller/Fancy_Lifesaver_Controller.php:41
 msgid "Installed plugins"
 msgstr "Zainstalowane wtyczki"
 
-#: src/Controller/Fancy_Lifesaver_Controller.php:47
+#: src/Controller/Fancy_Lifesaver_Controller.php:48
 msgid "PHP version"
 msgstr "Wersja PHP"
 
-#: src/Controller/Fancy_Lifesaver_Controller.php:52
+#: src/Controller/Fancy_Lifesaver_Controller.php:53
 msgid "Occurred error"
 msgstr "Wystąpił błąd"
 
@@ -110,11 +114,11 @@ msgid "Describe your problem / failure"
 msgstr "Opisz swój problem"
 
 #. translators: %s: delivery email address
-#: templates/modal.html.php:31
+#: templates/modal.html.php:32
 msgid "You agree to send information to the address %s about your website (url, version of the template and plugins, PHP version and information about your browser) and data from this form. The information you submit will be needed to diagnose the problem."
 msgstr "Wyrażasz zgodę na przesłanie informacji na adres %s o swojej stronie (adresu url, wersji szablonu oraz wtyczek, wersji PHP i informacji o Twojej przeglądarce) oraz danych z tego formularza. Przesłane informacje będą potrzebne do zdiagnozowania problemu."
 
-#: templates/modal.html.php:41
+#: templates/modal.html.php:42
 msgid "Send"
 msgstr "Wyślij"
 
