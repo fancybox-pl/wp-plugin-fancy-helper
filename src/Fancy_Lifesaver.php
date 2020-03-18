@@ -24,7 +24,8 @@ class Fancy_Lifesaver
 
     public function load_assets()
     {
-        wp_enqueue_style('fancy_livesaver_css', self::PLUGIN_URL.'assets/css/style.css');
+        wp_enqueue_style('fancy_livesaver_style', self::PLUGIN_URL.'assets/css/style.css');
+        wp_enqueue_style('fancy_livesaver_style_widget', self::PLUGIN_URL.'assets/css/widget.css');
         wp_enqueue_script('fancy_livesaver_js', self::PLUGIN_URL.'assets/js/app.js');
     }
 
