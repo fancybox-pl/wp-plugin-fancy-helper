@@ -5,12 +5,16 @@ class FancyLivesaver {
     this.showBtnElem = document.querySelector('#fancy-lifesaver-show');
     this.formElem = document.querySelector('#fancy-lifesaver-form');
     this.submitElem = document.querySelector('#fancy-lifesaver-submit');
+    this.screenInput = document.querySelector('#fancy-lifesaver-screen');
 
     if (this.formElem && this.modalElem && this.showBtnElem && this.closeBtnElem && this.submitElem) {
       this.formElem.reset();
       this.closeBtnElem.addEventListener('click', () => this.closeModal());
       this.showBtnElem.addEventListener('click', () => this.showModal());
       this.formElem.addEventListener('submit', (e) => this.formSubmitEventHandler(e));
+      if (this.screenInput) {
+        this.setInFormScreenResolution();
+      }
     }
   }
 
@@ -72,6 +76,10 @@ class FancyLivesaver {
     notice.appendChild(button);
 
     document.body.appendChild(notice);
+  }
+
+  setInFormScreenResolution() {
+    this.screenInput.value = window.innerWidth+'x'+window.innerHeight;
   }
 }
 

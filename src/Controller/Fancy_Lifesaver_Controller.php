@@ -33,10 +33,11 @@ class Fancy_Lifesaver_Controller
             <p><b>'.__('Description of the problem', 'fancy-lifesaver').'</b>:</p>
             '.nl2br($form_data['fancy-lifesaver-content']).'
             <p>-------------------- <b>'.__('System Info', 'fancy-lifesaver').'</b> --------------------</p>
+            <p><b>'.__('User Agent', 'fancy-lifesaver').'</b>: '.$_SERVER['HTTP_USER_AGENT'].'</p>
+            <p><b>'.__('Screen resolution', 'fancy-lifesaver').'</b>: '.$form_data['fancy-lifesaver-screen'].'</p>
             <p><b>'.__('Site url', 'fancy-lifesaver').'</b>: '.get_option('blogname').' <a href="'.get_option('siteurl').'" target="blank">'.get_option('siteurl').'</a></p>
             <p><b>'.__('Send from url', 'fancy-lifesaver').'</b>: <a href="'.$form_data['fancy-lifesaver-url'].'" target="blank">'.$form_data['fancy-lifesaver-url'].'</a></p>
             <p><b>'.__('WP version', 'fancy-lifesaver').'</b>: v'.$wp_version.'</p>
-            <p><b>'.__('User Agent', 'fancy-lifesaver').'</b>: '.$_SERVER['HTTP_USER_AGENT'].'</p>
             <p><b>'.__('Theme', 'fancy-lifesaver').'</b>: '.$theme->display('Name').' - v'.$theme->display('Version').'</p>
             <p><b>'.__('Installed plugins', 'fancy-lifesaver').'</b>:</p>
             <ul>
