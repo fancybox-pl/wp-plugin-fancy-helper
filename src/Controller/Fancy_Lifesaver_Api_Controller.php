@@ -1,5 +1,9 @@
 <?php
 
+namespace Fancybox\Fancy_Lifesaver\Controller;
+
+use Fancybox\Fancy_Lifesaver\Fancy_Lifesaver_Kernel;
+
 class Fancy_Lifesaver_Api_Controller
 {
     public function send_help_message(\WP_REST_Request $request)
@@ -42,7 +46,7 @@ class Fancy_Lifesaver_Api_Controller
         $body .= '</ul>';
         $body .= '<p><b>'.__('PHP version', 'fancy-lifesaver').'</b>: '.phpversion().'</p>';
 
-        $result = wp_mail(Fancy_Lifesaver::DELIVERY_ADDRESS, $subject, $body, $headers);
+        $result = wp_mail(Fancy_Lifesaver_Kernel::DELIVERY_ADDRESS, $subject, $body, $headers);
         if (!$result) {
             $response['status'] = 'fail';
             $response['data'] = __('Occurred error', 'fancy-lifesaver');

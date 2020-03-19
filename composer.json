@@ -1,0 +1,11 @@
+{
+    "name": "fancybox/fancy-lifesaver",
+    "description": "Lifebuoy for your Wordpress.",
+    "type": "wordpress-plugin",
+    "require": {},
+    "autoload": {
+        "psr-4": {
+            "Fancybox\\Fancy_Lifesaver\\": "src/"
+        }
+    }
+}

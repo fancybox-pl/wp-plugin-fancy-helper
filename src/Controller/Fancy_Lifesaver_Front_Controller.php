@@ -1,5 +1,9 @@
 <?php
 
+namespace Fancybox\Fancy_Lifesaver\Controller;
+
+use Fancybox\Fancy_Lifesaver\Fancy_Lifesaver_Kernel;
+
 class Fancy_Lifesaver_Front_Controller
 {
     public function __construct()
@@ -12,12 +16,12 @@ class Fancy_Lifesaver_Front_Controller
 
     public function load_assets()
     {
-        wp_enqueue_style('fancy_livesaver_style', Fancy_Lifesaver::PLUGIN_URL.'assets/css/style.css');
-        wp_enqueue_script('fancy_livesaver_js', Fancy_Lifesaver::PLUGIN_URL.'assets/js/app.js');
+        wp_enqueue_style('fancy_livesaver_style', Fancy_Lifesaver_Kernel::PLUGIN_URL.'assets/css/style.css');
+        wp_enqueue_script('fancy_livesaver_js', Fancy_Lifesaver_Kernel::PLUGIN_URL.'assets/js/app.js');
     }
 
     public function modal_template()
     {
-        include_once Fancy_Lifesaver::PLUGIN_DIR.'/templates/modal.html.php';
+        include_once Fancy_Lifesaver_Kernel::PLUGIN_DIR.'/templates/modal.html.php';
     }
 }

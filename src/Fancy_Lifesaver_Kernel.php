@@ -1,6 +1,11 @@
 <?php
 
-class Fancy_Lifesaver
+namespace Fancybox\Fancy_Lifesaver;
+
+use Fancybox\Fancy_Lifesaver\Controller\Fancy_Lifesaver_Admin_Controller;
+use Fancybox\Fancy_Lifesaver\Controller\Fancy_Lifesaver_Front_Controller;
+
+class Fancy_Lifesaver_Kernel
 {
     const VERSION = FANCY_LIFESAVER_VERSION;
     const PLUGIN_URL = FANCY_LIFESAVER_PLUGIN_URL;
