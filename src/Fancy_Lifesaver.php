@@ -12,21 +12,34 @@ class Fancy_Lifesaver
 
     public function __construct()
     {
-        add_action('admin_enqueue_scripts', [$this, 'load_assets']);
+        add_action('admin_enqueue_scripts', [$this, 'load_admin_assets']);
+        add_action('wp_enqueue_scripts', [$this, 'load_front_assets']);
         add_action('plugins_loaded', [$this, 'load_languages']);
         add_action('admin_bar_menu', [$this, 'admin_bar_link'], 1000);
         add_action('admin_menu', [$this, 'options_page']);
         add_action('plugin_action_links_'.self::PLUGIN_BASENAME, [$this, 'plugin_action_links']);
         add_action('admin_init', [$this, 'register_settings']);
+        add_action('plugins_loaded', [$this, 'load_controllers']);
+    }
 
+    public function load_controllers()
+    {
         $this->controller = new Fancy_Lifesaver_Controller();
     }
 
-    public function load_assets()
+    public function load_admin_assets()
     {
         wp_enqueue_style('fancy_livesaver_style', self::PLUGIN_URL.'assets/css/style.css');
         wp_enqueue_style('fancy_livesaver_style_widget', self::PLUGIN_URL.'assets/css/widget.css');
         wp_enqueue_script('fancy_livesaver_js', self::PLUGIN_URL.'assets/js/app.js');
+    }
+
+    public function load_front_assets()
+    {
+        if (current_user_can('administrator')) {
+            wp_enqueue_style('fancy_livesaver_style', self::PLUGIN_URL.'assets/css/style.css');
+            wp_enqueue_script('fancy_livesaver_js', self::PLUGIN_URL.'assets/js/app.js');
+        }
     }
 
     public function load_languages()

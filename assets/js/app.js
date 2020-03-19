@@ -2,20 +2,26 @@ class FancyLivesaver {
   constructor() {
     this.modalElem = document.querySelector('#fancy-lifesaver-modal');
     this.closeBtnElem = document.querySelector('#fancy-lifesaver-close');
-    this.showBtnElem = document.querySelector('#fancy-lifesaver-show');
+    this.showWidgetBtnElem = document.querySelector('#fancy-lifesaver-show');
+    this.showAdminBarBtnElem = document.querySelector('#wp-admin-bar-fancy-lifesaver-help-button');
     this.formElem = document.querySelector('#fancy-lifesaver-form');
     this.submitElem = document.querySelector('#fancy-lifesaver-submit');
     this.screenInput = document.querySelector('#fancy-lifesaver-screen');
 
-    if (this.formElem && this.modalElem && this.showBtnElem && this.closeBtnElem && this.submitElem) {
-      this.formElem.reset();
-      this.closeBtnElem.addEventListener('click', () => this.closeModal());
-      this.showBtnElem.addEventListener('click', () => this.showModal());
-      this.formElem.addEventListener('submit', (e) => this.formSubmitEventHandler(e));
-      if (this.screenInput) {
-        this.setInFormScreenResolution();
-      }
+    if (!this.modalElem || !this.formElem) {
+      return;
     }
+
+    if (this.showWidgetBtnElem) {
+      this.showWidgetBtnElem.addEventListener('click', () => this.showModal());
+    }
+    if (this.showAdminBarBtnElem) {
+      this.showAdminBarBtnElem.addEventListener('click', () => this.showModal());
+    }
+    this.formElem.reset();
+    this.formElem.addEventListener('submit', (e) => this.formSubmitEventHandler(e));
+    this.closeBtnElem.addEventListener('click', () => this.closeModal());
+    this.setScreenResolutionInForm();
   }
 
   closeModal() {
@@ -78,7 +84,7 @@ class FancyLivesaver {
     document.body.appendChild(notice);
   }
 
-  setInFormScreenResolution() {
+  setScreenResolutionInForm() {
     this.screenInput.value = window.innerWidth+'x'+window.innerHeight;
   }
 }
