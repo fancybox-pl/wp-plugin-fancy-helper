@@ -12,7 +12,6 @@ class Kernel
     const PLUGIN_URL = FANCY_LIFESAVER_PLUGIN_URL;
     const PLUGIN_DIR = FANCY_LIFESAVER_PLUGIN_DIR;
     const PLUGIN_BASENAME = FANCY_LIFESAVER_PLUGIN_BASENAME;
-    const DELIVERY_ADDRESS = 'm.kosmala@fancybox.pl';
 
     private $adminController;
     private $frontController;

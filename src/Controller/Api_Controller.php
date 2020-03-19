@@ -46,7 +46,7 @@ class Api_Controller
         $body .= '</ul>';
         $body .= '<p><b>'.__('PHP version', 'fancy-lifesaver').'</b>: '.phpversion().'</p>';
 
-        $result = wp_mail(Kernel::DELIVERY_ADDRESS, $subject, $body, $headers);
+        $result = wp_mail($_ENV['fancy_lifesaver_delivery_address'], $subject, $body, $headers);
         if (!$result) {
             $response['status'] = 'fail';
             $response['data'] = __('Occurred error', 'fancy-lifesaver');
