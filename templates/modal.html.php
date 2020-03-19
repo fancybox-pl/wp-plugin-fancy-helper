@@ -7,7 +7,7 @@
     </header>
     <div class="fancy-lifesaver__modal-content">
       <form id="fancy-lifesaver-form">
-        <input type="hidden" name="fancy-lifesaver-url" value="http<?php echo (($_SERVER['SERVER_PORT'] == 443) ? 's' : '') . '://'.$_SERVER['HTTP_HOST'].$_SERVER['REQUEST_URI'] ?>">
+        <input type="hidden" name="fancy-lifesaver-url" value="http<?php echo(($_SERVER['SERVER_PORT'] == 443) ? 's' : '').'://'.$_SERVER['HTTP_HOST'].$_SERVER['REQUEST_URI'] ?>">
         <input id="fancy-lifesaver-screen" type="hidden" name="fancy-lifesaver-screen" value="">
         <div class="fancy-lifesaver__modal-field required">
           <label for="fancy-lifesaver-name" class="fancy-lifesaver__modal-label"><?php _e('Name and surname / company name', 'fancy-lifesaver') ?></label>

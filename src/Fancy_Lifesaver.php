@@ -36,9 +36,9 @@ class Fancy_Lifesaver
             $icon = '<span class="ab-icon dashicons dashicons-sos"></span>';
             $title = __('Help', 'fancy-lifesaver');
             $admin_bar->add_menu([
-                'id'    => 'fancy-lifesaver-help-button',
+                'id' => 'fancy-lifesaver-help-button',
                 'title' => $icon.' <span class="ab-label">'.$title.'</span>',
-                'href'  => '#',
+                'href' => '#',
             ]);
         }
     }
