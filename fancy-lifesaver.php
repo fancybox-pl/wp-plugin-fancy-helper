@@ -38,6 +38,7 @@ if (defined('PHP_MAJOR_VERSION') && PHP_MAJOR_VERSION <= 5) {
 
     require_once plugin_dir_path(__FILE__).'src/Fancy_Lifesaver.php';
     require_once plugin_dir_path(__FILE__).'src/Controller/Fancy_Lifesaver_Controller.php';
+    require_once plugin_dir_path(__FILE__).'src/Controller/Fancy_Lifesaver_Api_Controller.php';
     require_once plugin_dir_path(__FILE__).'src/routing.php';
 
     $fancy_livesaver = new Fancy_Lifesaver();
