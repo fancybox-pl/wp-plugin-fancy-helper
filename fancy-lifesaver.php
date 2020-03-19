@@ -31,16 +31,13 @@ if (defined('PHP_MAJOR_VERSION') && PHP_MAJOR_VERSION <= 5) {
     }
     add_action('admin_notices', 'fancy_lifesaver_notice');
 } else {
-    define('FANCY_LIFESAVER_VERSION', '1.0.0');
-    define('FANCY_LIFESAVER_PLUGIN_URL', plugin_dir_url(__FILE__));
-    define('FANCY_LIFESAVER_PLUGIN_DIR', dirname(__FILE__));
-    define('FANCY_LIFESAVER_PLUGIN_BASENAME', plugin_basename(__FILE__));
+    require_once __DIR__.'/vendor/autoload.php';
 
-    require_once plugin_dir_path(__FILE__).'src/Fancy_Lifesaver.php';
-    require_once plugin_dir_path(__FILE__).'src/Controller/Fancy_Lifesaver_Admin_Controller.php';
-    require_once plugin_dir_path(__FILE__).'src/Controller/Fancy_Lifesaver_Front_Controller.php';
-    require_once plugin_dir_path(__FILE__).'src/Controller/Fancy_Lifesaver_Api_Controller.php';
-    require_once plugin_dir_path(__FILE__).'src/routing.php';
+    if (is_file(__DIR__.'/env.dev.php')) {
+        require_once __DIR__.'/env.dev.php';
+    } else {
+        require_once __DIR__.'/env.php';
+    }
 
-    $fancy_livesaver = new Fancy_Lifesaver();
+    require_once __DIR__.'/fancy-lifesaver-main.php';
 }

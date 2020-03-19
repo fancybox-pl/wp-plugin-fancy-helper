@@ -30,7 +30,7 @@
           <label for="fancy-lifesaver-acceptance" class="fancy-lifesaver__modal-label-checkbox">
           <?php
             /* translators: %s: delivery email address */
-            printf(__('You agree to send information to the address %s about your website (url, version of the template and plugins, PHP version and information about your browser) and data from this form. The information you submit will be needed to diagnose the problem.', 'fancy-lifesaver'), Fancy_Lifesaver::DELIVERY_ADDRESS);
+            printf(__('You agree to send information to the address %s about your website (url, version of the template and plugins, PHP version and information about your browser) and data from this form. The information you submit will be needed to diagnose the problem.', 'fancy-lifesaver'), $_ENV['fancy_lifesaver_delivery_address']);
           ?>
           </label>
         </div>
