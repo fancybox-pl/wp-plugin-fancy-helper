@@ -2,9 +2,9 @@
 
 namespace Fancybox\Fancy_Lifesaver\Controller;
 
-use Fancybox\Fancy_Lifesaver\Fancy_Lifesaver_Kernel;
+use Fancybox\Fancy_Lifesaver\Kernel;
 
-class Fancy_Lifesaver_Admin_Controller
+class Admin_Controller
 {
     public function __construct()
     {
@@ -17,9 +17,9 @@ class Fancy_Lifesaver_Admin_Controller
 
     public function load_assets()
     {
-        wp_enqueue_style('fancy_livesaver_style', Fancy_Lifesaver_Kernel::PLUGIN_URL.'assets/css/style.css');
-        wp_enqueue_style('fancy_livesaver_style_widget', Fancy_Lifesaver_Kernel::PLUGIN_URL.'assets/css/widget.css');
-        wp_enqueue_script('fancy_livesaver_js', Fancy_Lifesaver_Kernel::PLUGIN_URL.'assets/js/app.js');
+        wp_enqueue_style('fancy_livesaver_style', Kernel::PLUGIN_URL.'assets/css/style.css');
+        wp_enqueue_style('fancy_livesaver_style_widget', Kernel::PLUGIN_URL.'assets/css/widget.css');
+        wp_enqueue_script('fancy_livesaver_js', Kernel::PLUGIN_URL.'assets/js/app.js');
     }
 
     public function options_page()
@@ -41,16 +41,16 @@ class Fancy_Lifesaver_Admin_Controller
 
     public function options_template()
     {
-        include_once Fancy_Lifesaver_Kernel::PLUGIN_DIR.'/templates/options.html.php';
+        include_once Kernel::PLUGIN_DIR.'/templates/options.html.php';
     }
 
     public function widget_template()
     {
-        include_once Fancy_Lifesaver_Kernel::PLUGIN_DIR.'/templates/widget.html.php';
+        include_once Kernel::PLUGIN_DIR.'/templates/widget.html.php';
     }
 
     public function modal_template()
     {
-        include_once Fancy_Lifesaver_Kernel::PLUGIN_DIR.'/templates/modal.html.php';
+        include_once Kernel::PLUGIN_DIR.'/templates/modal.html.php';
     }
 }

@@ -2,9 +2,9 @@
 
 namespace Fancybox\Fancy_Lifesaver;
 
-use Fancybox\Fancy_Lifesaver\Controller\Fancy_Lifesaver_Api_Controller;
+use Fancybox\Fancy_Lifesaver\Controller\Api_Controller;
 
-class Fancy_Lifesaver_Router
+class Router
 {
     public function __construct()
     {
@@ -19,7 +19,7 @@ class Fancy_Lifesaver_Router
 
         register_rest_route('fancy-lifesaver', '/help', [
             'methods' => 'POST',
-            'callback' => [Fancy_Lifesaver_Api_Controller::class, 'send_help_message'],
+            'callback' => [Api_Controller::class, 'send_help_message'],
         ]);
     }
 }

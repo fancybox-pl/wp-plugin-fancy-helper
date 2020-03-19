@@ -2,11 +2,11 @@
 
 namespace Fancybox\Fancy_Lifesaver;
 
-use Fancybox\Fancy_Lifesaver\Controller\Fancy_Lifesaver_Admin_Controller;
-use Fancybox\Fancy_Lifesaver\Controller\Fancy_Lifesaver_Front_Controller;
-use Fancybox\Fancy_Lifesaver\Fancy_Lifesaver_Router;
+use Fancybox\Fancy_Lifesaver\Controller\Admin_Controller;
+use Fancybox\Fancy_Lifesaver\Controller\Front_Controller;
+use Fancybox\Fancy_Lifesaver\Router;
 
-class Fancy_Lifesaver_Kernel
+class Kernel
 {
     const VERSION = FANCY_LIFESAVER_VERSION;
     const PLUGIN_URL = FANCY_LIFESAVER_PLUGIN_URL;
@@ -29,13 +29,13 @@ class Fancy_Lifesaver_Kernel
 
     public function load_controllers()
     {
-        $this->adminController = new Fancy_Lifesaver_Admin_Controller();
-        $this->frontController = new Fancy_Lifesaver_Front_Controller();
+        $this->adminController = new Admin_Controller();
+        $this->frontController = new Front_Controller();
     }
 
     public function load_router()
     {
-        $this->router = new Fancy_Lifesaver_Router();
+        $this->router = new Router();
     }
 
     public function load_languages()
