@@ -4,6 +4,7 @@ namespace Fancybox\Fancy_Lifesaver;
 
 use Fancybox\Fancy_Lifesaver\Controller\Fancy_Lifesaver_Admin_Controller;
 use Fancybox\Fancy_Lifesaver\Controller\Fancy_Lifesaver_Front_Controller;
+use Fancybox\Fancy_Lifesaver\Fancy_Lifesaver_Router;
 
 class Fancy_Lifesaver_Kernel
 {
@@ -15,6 +16,7 @@ class Fancy_Lifesaver_Kernel
 
     private $adminController;
     private $frontController;
+    private $router;
 
     public function __construct()
     {
@@ -22,12 +24,18 @@ class Fancy_Lifesaver_Kernel
         add_action('admin_bar_menu', [$this, 'admin_bar_link'], 1000);
         add_action('plugin_action_links_'.self::PLUGIN_BASENAME, [$this, 'plugin_action_links']);
         add_action('plugins_loaded', [$this, 'load_controllers']);
+        add_action('rest_api_init', [$this, 'load_router']);
     }
 
     public function load_controllers()
     {
         $this->adminController = new Fancy_Lifesaver_Admin_Controller();
         $this->frontController = new Fancy_Lifesaver_Front_Controller();
+    }
+
+    public function load_router()
+    {
+        $this->router = new Fancy_Lifesaver_Router();
     }
 
     public function load_languages()
