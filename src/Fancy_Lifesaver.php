@@ -8,38 +8,21 @@ class Fancy_Lifesaver
     const PLUGIN_BASENAME = FANCY_LIFESAVER_PLUGIN_BASENAME;
     const DELIVERY_ADDRESS = 'm.kosmala@fancybox.pl';
 
-    private $controller;
+    private $adminController;
+    private $frontController;
 
     public function __construct()
     {
-        add_action('admin_enqueue_scripts', [$this, 'load_admin_assets']);
-        add_action('wp_enqueue_scripts', [$this, 'load_front_assets']);
         add_action('plugins_loaded', [$this, 'load_languages']);
         add_action('admin_bar_menu', [$this, 'admin_bar_link'], 1000);
-        add_action('admin_menu', [$this, 'options_page']);
         add_action('plugin_action_links_'.self::PLUGIN_BASENAME, [$this, 'plugin_action_links']);
-        add_action('admin_init', [$this, 'register_settings']);
         add_action('plugins_loaded', [$this, 'load_controllers']);
     }
 
     public function load_controllers()
     {
-        $this->controller = new Fancy_Lifesaver_Controller();
-    }
-
-    public function load_admin_assets()
-    {
-        wp_enqueue_style('fancy_livesaver_style', self::PLUGIN_URL.'assets/css/style.css');
-        wp_enqueue_style('fancy_livesaver_style_widget', self::PLUGIN_URL.'assets/css/widget.css');
-        wp_enqueue_script('fancy_livesaver_js', self::PLUGIN_URL.'assets/js/app.js');
-    }
-
-    public function load_front_assets()
-    {
-        if (current_user_can('administrator')) {
-            wp_enqueue_style('fancy_livesaver_style', self::PLUGIN_URL.'assets/css/style.css');
-            wp_enqueue_script('fancy_livesaver_js', self::PLUGIN_URL.'assets/js/app.js');
-        }
+        $this->adminController = new Fancy_Lifesaver_Admin_Controller();
+        $this->frontController = new Fancy_Lifesaver_Front_Controller();
     }
 
     public function load_languages()
@@ -60,17 +43,6 @@ class Fancy_Lifesaver
         }
     }
 
-    public function options_page()
-    {
-        add_options_page(
-            'Fancy Lifesaver '.__('Settings', 'fancy-lifesaver'),
-            'Fancy Lifesaver',
-            'manage_options',
-            'fancy_lifesaver',
-            ['Fancy_Lifesaver_Controller', 'options_template']
-        );
-    }
-
     public function plugin_action_links(array $links_array): array
     {
         $settings_url = admin_url('options-general.php?page=fancy_lifesaver');
@@ -79,11 +51,5 @@ class Fancy_Lifesaver
         array_unshift($links_array, '<a href="'.$settings_url.'">'.$settings_title.'</a>');
 
         return $links_array;
-    }
-
-    public function register_settings()
-    {
-        register_setting('fancy_lifesaver_plugin_page', 'fancy_lifesaver_lifebuoy_visible');
-        register_setting('fancy_lifesaver_plugin_page', 'fancy_lifesaver_admin_bar_link_visible');
     }
 }
