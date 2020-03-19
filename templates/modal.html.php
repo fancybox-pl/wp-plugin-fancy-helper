@@ -1,4 +1,4 @@
-<div id="fancy-lifesaver-modal" class="fancy-lifesaver__modal" style="display: none">
+<div id="fancy-lifesaver-modal" class="fancy-ls fancy-lifesaver__modal" style="display: none">
   <div id="fancy-lifesaver-modal-wrap" class="fancy-lifesaver__modal-wrap">
     <header class="fancy-lifesaver__modal-header">
       <img src="<?php echo FANCY_LIFESAVER_PLUGIN_URL.'assets/svg/fancy-cube.svg' ?>">
