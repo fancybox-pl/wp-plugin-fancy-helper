@@ -61,7 +61,7 @@ class FancyLivesaver {
 
   notice(message = '', type = '') {
     const notice = document.createElement('div');
-    notice.classList.add('fancy-lifesaver-notice');
+    notice.classList.add('fancy-ls', 'fancy-lifesaver-notice');
     if ('error' == type) {
       notice.classList.add('fancy-lifesaver-notice--error');
     }

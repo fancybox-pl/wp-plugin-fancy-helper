@@ -1,3 +1,6 @@
+/*
+ * MODAL
+ */
 .fancy-ls{
   font-size: 13px;
   line-height: 22px;
@@ -199,7 +202,10 @@
   display: inline-block;
 }
 
-.fancy-ls .fancy-lifesaver-notice {
+/*
+ * NOTICE
+ */
+.fancy-ls.fancy-lifesaver-notice {
   box-sizing: border-box;
   position: fixed;
   z-index: 100;
@@ -217,11 +223,11 @@
   background: #fff url('/wp-content/plugins/fancy-lifesaver/assets/svg/fancy-cube.svg') no-repeat left 20px center;
 }
 
-.fancy-ls .fancy-lifesaver-notice.fancy-lifesaver-notice--error {
+.fancy-ls.fancy-lifesaver-notice.fancy-lifesaver-notice--error {
   background-color: #ff7a7a;
 }
 
-.fancy-ls .fancy-lifesaver-notice .dismiss {
+.fancy-ls.fancy-lifesaver-notice .dismiss {
   position: absolute;
   top: 50%;
   transform: translate(0, -50%);
@@ -232,7 +238,7 @@
   text-align: center;
 }
 
-.fancy-ls .fancy-lifesaver-notice .dismiss:before {
+.fancy-ls.fancy-lifesaver-notice .dismiss:before {
   content: "\f335";
   font-family: dashicons;
   line-height: 30px;
@@ -241,10 +247,13 @@
   transition: all 0.1s ease-in;
 }
 
-.fancy-ls .fancy-lifesaver-notice:hover .dismiss {
+.fancy-ls.fancy-lifesaver-notice:hover .dismiss {
   color: #DB2792;
 }
 
+/*
+ * ADMIN BAR
+ */
 #wp-admin-bar-fancy-lifesaver-help-button {
   display: block !important;
 }
