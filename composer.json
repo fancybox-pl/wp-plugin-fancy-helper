@@ -2,6 +2,16 @@
     "name": "fancybox/fancy-lifesaver",
     "description": "Lifebuoy for your Wordpress.",
     "type": "wordpress-plugin",
+    "version": "1.0.0",
+    "readme": "README.md",
+    "license": "GPL-2.0",
+    "authors": [
+        {
+            "name": "Marcin Kosmala",
+            "email": "m.kosmala@fancybox.pl",
+            "role": "Developer"
+        }
+    ],
     "require": {},
     "autoload": {
         "psr-4": {

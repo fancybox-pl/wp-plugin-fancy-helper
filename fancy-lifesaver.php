@@ -32,12 +32,5 @@ if (defined('PHP_MAJOR_VERSION') && PHP_MAJOR_VERSION <= 5) {
     add_action('admin_notices', 'fancy_lifesaver_notice');
 } else {
     require_once __DIR__.'/vendor/autoload.php';
-
-    if (is_file(__DIR__.'/env.dev.php')) {
-        require_once __DIR__.'/env.dev.php';
-    } else {
-        require_once __DIR__.'/env.php';
-    }
-
-    require_once __DIR__.'/fancy-lifesaver-main.php';
+    require_once __DIR__.'/bootstrap.php';
 }
