@@ -6,7 +6,7 @@
       <span id="fancy-lifesaver-close" class="fancy-lifesaver__modal-close dashicons dashicons-no-alt"></span>
     </header>
     <div class="fancy-lifesaver__modal-content">
-      <form id="fancy-lifesaver-form">
+      <form id="fancy-lifesaver-form" enctype="multipart/form-data">
         <input type="hidden" name="fancy-lifesaver-url" value="http<?php echo(($_SERVER['SERVER_PORT'] == 443) ? 's' : '').'://'.$_SERVER['HTTP_HOST'].$_SERVER['REQUEST_URI'] ?>">
         <input id="fancy-lifesaver-screen" type="hidden" name="fancy-lifesaver-screen" value="">
         <div class="fancy-lifesaver__modal-field required">
@@ -24,6 +24,12 @@
         <div class="fancy-lifesaver__modal-field required">
           <label for="fancy-lifesaver-content" class="fancy-lifesaver__modal-label"><?php _e('Description of the problem', 'fancy-lifesaver') ?></label>
           <textarea id="fancy-lifesaver-content" name="fancy-lifesaver-content" class="fancy-lifesaver__modal-textarea" required></textarea>
+        </div>
+        <div class="fancy-lifesaver__modal-field">
+          <label for="fancy-lifesaver-content" class="fancy-lifesaver__modal-label"><?php _e('Screenshot', 'fancy-lifesaver') ?></label>
+          <input id="fancy-lifesaver-files" class="fancy-lifesaver__file-input" type="file" name="fancy-lifesaver-files[]" accept="image/*" multiple>
+          <div id="fancy-lifesaver-files-thumb-wrapp" class="fancy-lifesaver__upload-thumbs">
+          </div>
         </div>
         <div class="fancy-lifesaver__modal-field required">
           <input id="fancy-lifesaver-acceptance" name="fancy-lifesaver-acceptance" type="checkbox" class="fancy-lifesaver__modal-input-checkbox" required>

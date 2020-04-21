@@ -8,22 +8,36 @@ class Api_Controller
 {
     public function send_help_message(\WP_REST_Request $request)
     {
-        $response = [
-            'status' => 'success',
-            'data' => __('Message was send', 'fancy-lifesaver'),
-        ];
-
-        global $wp_version;
         $form_data = $request->get_params();
-        $theme = wp_get_theme();
+        $files = $request->get_file_params();
 
-        if (!function_exists('get_plugins')) {
-            require_once ABSPATH.'wp-admin/includes/plugin.php';
+        $attachments = [];
+        if (!empty($files['fancy-lifesaver-files'] && count($files['fancy-lifesaver-files']))) {
+            if (!function_exists('wp_handle_upload')) {
+                require_once ABSPATH.'wp-admin/includes/file.php';
+            }
+            $files = $files['fancy-lifesaver-files'];
+            foreach ($files['name'] as $key => $value) {
+                $file = [
+                    'name' => $files['name'][$key],
+                    'type' => $files['type'][$key],
+                    'tmp_name' => $files['tmp_name'][$key],
+                    'error' => $files['error'][$key],
+                    'size' => $files['size'][$key]
+                ];
+
+                $res = wp_handle_upload($file, ['test_form' => false]);
+                if (!empty($res['file'])) {
+                    $attachments[] = $res['file'];
+                }
+            }
         }
-        $plugins = (array) get_plugins();
 
         $subject = __('Fancy Lifesaver - new issue', 'fancy-lifesaver');
         $headers = ['Content-Type: text/html; charset=UTF-8'];
+
+        global $wp_version;
+        $theme = wp_get_theme();
         $body = '
             <p><b>'.__('Name and surname / company name', 'fancy-lifesaver').'</b>: '.$form_data['fancy-lifesaver-name'].'</p>
             <p><b>'.__('Contact email address', 'fancy-lifesaver').'</b>: '.$form_data['fancy-lifesaver-email'].'</p>
@@ -40,16 +54,31 @@ class Api_Controller
             <p><b>'.__('Installed plugins', 'fancy-lifesaver').'</b>:</p>
             <ul>
         ';
+        if (!function_exists('get_plugins')) {
+            require_once ABSPATH.'wp-admin/includes/plugin.php';
+        }
+        $plugins = (array) get_plugins();
         foreach ($plugins as $plugin) {
             $body .= '<li>'.$plugin['Name'].' - v'.$plugin['Version'].'</li>';
         }
         $body .= '</ul>';
         $body .= '<p><b>'.__('PHP version', 'fancy-lifesaver').'</b>: '.phpversion().'</p>';
 
-        $result = wp_mail($_ENV['fancy_lifesaver_delivery_address'], $subject, $body, $headers);
+        $result = wp_mail($_ENV['fancy_lifesaver_delivery_address'], $subject, $body, $headers, $attachments);
+        foreach ($attachments as $attachment) {
+            @unlink($attachment);
+        }
+
+        $response = [
+            'status' => null,
+            'data' => null,
+        ];
         if (!$result) {
             $response['status'] = 'fail';
             $response['data'] = __('Occurred error', 'fancy-lifesaver');
+        } else {
+            $response['status'] = 'success';
+            $response['data'] = __('Message was send', 'fancy-lifesaver');
         }
 
         return $response;

@@ -7,6 +7,8 @@ class FancyLivesaver {
     this.formElem = document.querySelector('#fancy-lifesaver-form');
     this.submitElem = document.querySelector('#fancy-lifesaver-submit');
     this.screenInput = document.querySelector('#fancy-lifesaver-screen');
+    this.filesInput = document.querySelector('#fancy-lifesaver-files');
+    this.filesThumbWrapp = document.querySelector('#fancy-lifesaver-files-thumb-wrapp');
 
     if (!this.modalElem || !this.formElem) {
       return;
@@ -17,6 +19,9 @@ class FancyLivesaver {
     }
     if (this.showAdminBarBtnElem) {
       this.showAdminBarBtnElem.addEventListener('click', () => this.showModal());
+    }
+    if (this.filesInput && this.filesThumbWrapp) {
+      this.filesInput.addEventListener('change', () => this.changeFilesEventHandler());
     }
     this.formElem.reset();
     this.formElem.addEventListener('submit', (e) => this.formSubmitEventHandler(e));
@@ -86,6 +91,24 @@ class FancyLivesaver {
 
   setScreenResolutionInForm() {
     this.screenInput.value = window.innerWidth+'x'+window.innerHeight;
+  }
+
+  changeFilesEventHandler() {
+    this.filesThumbWrapp.innerHTML = '';
+
+    [...this.filesInput.files].forEach((file) => {
+      let reader = new FileReader();
+      reader.onloadend = () => {
+        const img = document.createElement('img');
+        img.classList.add('fancy-lifesaver__thumb');
+        img.src = reader.result;
+        this.filesThumbWrapp.appendChild(img);
+      }
+
+      reader.readAsDataURL(file);
+    });
+
+    // console.log(img);
   }
 }
 
