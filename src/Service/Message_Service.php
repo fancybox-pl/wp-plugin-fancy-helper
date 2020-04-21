@@ -33,6 +33,18 @@ class Message_Service
                 'message' => __('Missing acceptance', 'fancy-lifesaver'),
             ];
         }
+        if (!empty($files['fancy-lifesaver-files'])
+            && !empty($files['fancy-lifesaver-files']['type'])
+        ) {
+            foreach ($files['fancy-lifesaver-files']['type'] as $type) {
+                if (strpos($type, 'image/') === false) {
+                    $errors[] = [
+                        'path' => 'fancy-lifesaver-files[]',
+                        'message' => __('Invalid file type', 'fancy-lifesaver'),
+                    ];
+                }
+            }
+        }
 
         return $errors;
     }
