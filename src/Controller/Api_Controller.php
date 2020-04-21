@@ -3,34 +3,23 @@
 namespace Fancybox\Fancy_Lifesaver\Controller;
 
 use Fancybox\Fancy_Lifesaver\Kernel;
+use Fancybox\Fancy_Lifesaver\Service\Message_Service;
 
 class Api_Controller
 {
     public function send_help_message(\WP_REST_Request $request)
     {
+        $message_service = new Message_Service();
         $form_data = $request->get_params();
         $files = $request->get_file_params();
 
-        $attachments = [];
-        if (!empty($files['fancy-lifesaver-files'] && count($files['fancy-lifesaver-files']))) {
-            if (!function_exists('wp_handle_upload')) {
-                require_once ABSPATH.'wp-admin/includes/file.php';
-            }
-            $files = $files['fancy-lifesaver-files'];
-            foreach ($files['name'] as $key => $value) {
-                $file = [
-                    'name' => $files['name'][$key],
-                    'type' => $files['type'][$key],
-                    'tmp_name' => $files['tmp_name'][$key],
-                    'error' => $files['error'][$key],
-                    'size' => $files['size'][$key]
-                ];
-
-                $res = wp_handle_upload($file, ['test_form' => false]);
-                if (!empty($res['file'])) {
-                    $attachments[] = $res['file'];
-                }
-            }
+        $errors = $message_service->validate($form_data, $files);
+        if (count($errors)) {
+            return [
+                'status' => 'fail',
+                'data' => __('Form has errors', 'fancy-lifesaver'),
+                'errors' => $errors,
+            ];
         }
 
         $subject = __('Fancy Lifesaver - new issue', 'fancy-lifesaver');
@@ -64,15 +53,12 @@ class Api_Controller
         $body .= '</ul>';
         $body .= '<p><b>'.__('PHP version', 'fancy-lifesaver').'</b>: '.phpversion().'</p>';
 
-        $result = wp_mail($_ENV['fancy_lifesaver_delivery_address'], $subject, $body, $headers, $attachments);
-        foreach ($attachments as $attachment) {
-            @unlink($attachment);
-        }
+        $attachments = $message_service->save_tmp_attachments($files);
 
-        $response = [
-            'status' => null,
-            'data' => null,
-        ];
+        $result = wp_mail($_ENV['fancy_lifesaver_delivery_address'], $subject, $body, $headers, $attachments);
+
+        $message_service->remove_tmp_attachments($attachments);
+
         if (!$result) {
             $response['status'] = 'fail';
             $response['data'] = __('Occurred error', 'fancy-lifesaver');

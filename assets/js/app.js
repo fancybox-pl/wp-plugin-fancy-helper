@@ -56,6 +56,9 @@ class FancyLivesaver {
     e.preventDefault();
     const formData = new FormData(this.formElem);
     this.submitElem.classList.add('fancy-lifesaver__modal-submit--sending');
+    document.querySelectorAll('.fancy-lifesaver__modal-error').forEach((elem) => {
+      elem.remove();
+    });
 
     fetch('/wp-json/fancy-lifesaver/help', {
         method: 'post',
@@ -67,8 +70,21 @@ class FancyLivesaver {
           this.closeModal();
           this.notice(response.data);
         } else {
-          this.closeModal();
-          this.notice(response.data, 'error');
+          if (response.errors) {
+            response.errors.forEach((error) => {
+              let elem = document.querySelector(`[name="${error.path}"]`);
+              if (elem) {
+                let message = document.createElement('span');
+                message.classList.add('fancy-lifesaver__modal-error');
+                message.innerHTML = error.message;
+                elem.parentElement.appendChild(message);
+              }
+            });
+          } else {
+            this.notice(response.data, 'error');
+            this.closeModal();
+          }
+          this.submitElem.classList.remove('fancy-lifesaver__modal-submit--sending');
         }
       })
       .catch((error) => console.error('Error:', error));
