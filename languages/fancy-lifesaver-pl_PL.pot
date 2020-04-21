@@ -9,7 +9,7 @@ msgstr ""
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"POT-Creation-Date: 2020-03-18T14:15:32+01:00\n"
+"POT-Creation-Date: 2020-04-21T14:27:56+02:00\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "X-Generator: WP-CLI 2.2.0\n"
 "X-Domain: fancy-lifesaver\n"
@@ -35,94 +35,122 @@ msgstr "FancyBox"
 msgid "Danger - You are using a very old version of PHP, update it as soon as possible."
 msgstr "Niebezpieczeństwo - Korzystasz z bardzo starej wersji PHP, zaktualizuj ją jak najszybciej"
 
-#: src/Controller/Fancy_Lifesaver_Controller.php:15
-msgid "Message was send"
-msgstr "Wiadomość została wysłana"
+#: src/Controller/Admin_Controller.php:28
+#: src/Kernel.php:61
+msgid "Settings"
+msgstr "Ustawienia"
 
-#: src/Controller/Fancy_Lifesaver_Controller.php:27
+#: src/Controller/Api_Controller.php:20
+msgid "Form has errors"
+msgstr "Formularz zawiera błędy"
+
+#: src/Controller/Api_Controller.php:25
 msgid "Fancy Lifesaver - new issue"
 msgstr "Fancy Lifesaver - nowe zgłoszenie"
 
-#: src/Controller/Fancy_Lifesaver_Controller.php:30
+#: src/Controller/Api_Controller.php:31
 #: templates/modal.html.php:13
 msgid "Name and surname / company name"
 msgstr "Imię i nazwisko / nazwa firmy"
 
-#: src/Controller/Fancy_Lifesaver_Controller.php:31
+#: src/Controller/Api_Controller.php:32
 #: templates/modal.html.php:17
 msgid "Contact email address"
 msgstr "Adres email do kontaktu"
 
-#: src/Controller/Fancy_Lifesaver_Controller.php:32
+#: src/Controller/Api_Controller.php:33
 #: templates/modal.html.php:21
 msgid "Phone number"
 msgstr "Numer telefonu"
 
-#: src/Controller/Fancy_Lifesaver_Controller.php:33
+#: src/Controller/Api_Controller.php:34
 #: templates/modal.html.php:25
 msgid "Description of the problem"
 msgstr "Opis problemu"
 
-#: src/Controller/Fancy_Lifesaver_Controller.php:35
+#: src/Controller/Api_Controller.php:36
 msgid "System Info"
 msgstr "Informacje o systemie"
 
-#: src/Controller/Fancy_Lifesaver_Controller.php:36
+#: src/Controller/Api_Controller.php:37
 msgid "User Agent"
 msgstr "User Agent"
 
-#: src/Controller/Fancy_Lifesaver_Controller.php:37
+#: src/Controller/Api_Controller.php:38
 msgid "Screen resolution"
 msgstr "Rozdzielczość ekranu"
 
-#: src/Controller/Fancy_Lifesaver_Controller.php:38
+#: src/Controller/Api_Controller.php:39
 msgid "Site url"
 msgstr "Adres url"
 
-#: src/Controller/Fancy_Lifesaver_Controller.php:39
+#: src/Controller/Api_Controller.php:40
 msgid "Send from url"
 msgstr "Wysłano z url"
 
-#: src/Controller/Fancy_Lifesaver_Controller.php:40
+#: src/Controller/Api_Controller.php:41
 msgid "WP version"
 msgstr "Wersja WP"
 
-#: src/Controller/Fancy_Lifesaver_Controller.php:41
+#: src/Controller/Api_Controller.php:42
 msgid "Theme"
 msgstr "Szablon"
 
-#: src/Controller/Fancy_Lifesaver_Controller.php:42
+#: src/Controller/Api_Controller.php:43
 msgid "Installed plugins"
 msgstr "Zainstalowane wtyczki"
 
-#: src/Controller/Fancy_Lifesaver_Controller.php:49
+#: src/Controller/Api_Controller.php:54
 msgid "PHP version"
 msgstr "Wersja PHP"
 
-#: src/Controller/Fancy_Lifesaver_Controller.php:54
+#: src/Controller/Api_Controller.php:64
 msgid "Occurred error"
 msgstr "Wystąpił błąd"
 
-#: src/Fancy_Lifesaver.php:40
+#: src/Controller/Api_Controller.php:67
+msgid "Message was send"
+msgstr "Wiadmość została wysłana"
+
+#: src/Kernel.php:49
 #: templates/widget.html.php:4
 msgid "Help"
 msgstr "Pomoc"
 
-#: src/Fancy_Lifesaver.php:52
-#: src/Fancy_Lifesaver.php:63
-msgid "Settings"
-msgstr "Ustawienia"
+#: src/Service/Message_Service.php:13
+msgid "Empty name"
+msgstr "Brak imienia lub nazwy firmy"
+
+#: src/Service/Message_Service.php:21
+msgid "Invalid or empty email"
+msgstr "Nieprawidłowy adres email"
+
+#: src/Service/Message_Service.php:27
+msgid "Empty content"
+msgstr "Brak treści wiadomości"
+
+#: src/Service/Message_Service.php:33
+msgid "Missing acceptance"
+msgstr "Brak zanaczonej zgody"
+
+#: src/Service/Message_Service.php:43
+msgid "Invalid file type"
+msgstr "Nieprawidłowy format pliku"
 
 #: templates/modal.html.php:5
 msgid "Describe your problem / failure"
 msgstr "Opisz swój problem"
 
+#: templates/modal.html.php:29
+msgid "Screenshot"
+msgstr "Zrzut ekranu"
+
 #. translators: %s: delivery email address
-#: templates/modal.html.php:33
+#: templates/modal.html.php:39
 msgid "You agree to send information to the address %s about your website (url, version of the template and plugins, PHP version and information about your browser) and data from this form. The information you submit will be needed to diagnose the problem."
 msgstr "Wyrażasz zgodę na przesłanie informacji na adres %s o swojej stronie (adresu url, wersji szablonu oraz wtyczek, wersji PHP i informacji o Twojej przeglądarce) oraz danych z tego formularza. Przesłane informacje będą potrzebne do zdiagnozowania problemu."
 
-#: templates/modal.html.php:43
+#: templates/modal.html.php:49
 msgid "Send"
 msgstr "Wyślij"
 
