@@ -21,6 +21,7 @@ class FancyLivesaver {
       this.showAdminBarBtnElem.addEventListener('click', () => this.showModal());
     }
     if (this.filesInput && this.filesThumbWrapp) {
+      this.filesThumbWrapp.innerHTML = '';
       this.filesInput.addEventListener('change', () => this.changeFilesEventHandler());
     }
     this.formElem.reset();
@@ -36,6 +37,9 @@ class FancyLivesaver {
       this.modalElem.style.opacity = '';
       this.modalElem.style.display = 'none';
       this.formElem.reset();
+      if (this.filesThumbWrapp) {
+        this.filesThumbWrapp.innerHTML = '';
+      }
       this.submitElem.classList.remove('fancy-lifesaver__modal-submit--sending');
     }, 200);
   }
