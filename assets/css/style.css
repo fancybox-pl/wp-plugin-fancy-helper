@@ -4,6 +4,8 @@
 .fancy-ls{
   font-size: 13px;
   line-height: 22px;
+  color: #000;
+  font-family: -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Oxygen-Sans,Ubuntu,Cantarell,"Helvetica Neue",sans-serif !important;
 }
 
 .fancy-ls.fancy-helper__modal {
@@ -117,8 +119,12 @@
   border-radius: 0 !important;
   border: 1px solid #9d9fa2 !important;
   padding: 5px 10px !important;
-  line-height: 30px;
-  font-size: 13px;
+  line-height: 30px !important;
+  font-size: 13px !important;
+  height: auto !important;
+  box-shadow: none !important;
+  background: #fff !important;
+  font-family: -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Oxygen-Sans,Ubuntu,Cantarell,"Helvetica Neue",sans-serif !important;
 }
 
 @media only screen and (max-width: 1024px) {
@@ -148,20 +154,22 @@
 }
 
 .fancy-ls .fancy-helper__modal-submit {
-  background: #2BBEB3;
-  border: none;
-  padding: 7px 30px 7px 20px;
-  color: #fff;
-  font-weight: 600;
-  font-size: 16px;
+  background: #2BBEB3 !important;
+  border: none !important;
+  padding: 7px 30px 7px 20px !important;
+  color: #fff !important;
+  font-weight: 600 !important;
+  font-size: 16px !important;
   transition: all 0.1s ease-in;
   cursor: pointer;
-  text-transform: none;
+  text-transform: none !important;
+  line-height: normal !important;
+  height: auto !important;
 }
 
 .fancy-ls .fancy-helper__modal-submit:hover {
-  background: #FEBF27;
-  text-decoration: none;
+  background: #FEBF27 !important;
+  text-decoration: none !important;
 }
 
 .fancy-ls .fancy-helper__modal-icons .dashicons {
