@@ -1,9 +1,9 @@
 # Copyright (C) 2020 FancyBox
-# This file is distributed under the same license as the Fancy Lifesaver plugin.
+# This file is distributed under the same license as the Fancy Helper plugin.
 msgid ""
 msgstr ""
-"Project-Id-Version: Fancy Lifesaver 1.0.0\n"
-"Report-Msgid-Bugs-To: https://wordpress.org/support/plugin/fancy-lifesaver\n"
+"Project-Id-Version: Fancy Helper 1.0.0\n"
+"Report-Msgid-Bugs-To: https://wordpress.org/support/plugin/fancy-helper\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "MIME-Version: 1.0\n"
@@ -12,10 +12,10 @@ msgstr ""
 "POT-Creation-Date: 2020-04-21T14:27:56+02:00\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "X-Generator: WP-CLI 2.2.0\n"
-"X-Domain: fancy-lifesaver\n"
+"X-Domain: fancy-helper\n"
 
 #. Plugin Name of the plugin
-msgid "Fancy Lifesaver"
+msgid "Fancy Helper"
 msgstr ""
 
 #. Plugin URI of the plugin
@@ -31,7 +31,7 @@ msgstr "Koło ratunkowe dla Twojego Wordpress'a. Jeżeli masz problem ze swoją 
 msgid "FancyBox"
 msgstr "FancyBox"
 
-#: fancy-lifesaver.php:30
+#: fancy-helper.php:30
 msgid "Danger - You are using a very old version of PHP, update it as soon as possible."
 msgstr "Niebezpieczeństwo - Korzystasz z bardzo starej wersji PHP, zaktualizuj ją jak najszybciej"
 
@@ -45,8 +45,8 @@ msgid "Form has errors"
 msgstr "Formularz zawiera błędy"
 
 #: src/Controller/Api_Controller.php:25
-msgid "Fancy Lifesaver - new issue"
-msgstr "Fancy Lifesaver - nowe zgłoszenie"
+msgid "Fancy Helper - new issue"
+msgstr "Fancy Helper - nowe zgłoszenie"
 
 #: src/Controller/Api_Controller.php:31
 #: templates/modal.html.php:13
@@ -155,12 +155,12 @@ msgid "Send"
 msgstr "Wyślij"
 
 #: templates/options.html.php:2
-msgid "Fancy Lifesaver Settings"
-msgstr "Fancy Lifesaver Ustawienia"
+msgid "Fancy Helper Settings"
+msgstr "Fancy Helper Ustawienia"
 
 #: templates/options.html.php:6
-msgid "Visibility settings of Fancy Lifesaver"
-msgstr "Ustawienia widoczności Fancy Lifesaver"
+msgid "Visibility settings of Fancy Helper"
+msgstr "Ustawienia widoczności Fancy Helper"
 
 #: templates/options.html.php:11
 msgid "Visibility lifebuoy"

@@ -1,4 +1,4 @@
-=== Fancy Lifesaver ===
+=== Fancy Helper ===
 Contributors: kosmala007
 Donate link: https://www.fancybox.pl/
 Tags: support, lifebuoy, fancybox
@@ -14,7 +14,7 @@ Lifebuoy for your Wordpress. If you have a problem with your site, it works too 
 
 == Installation ==
 
-1. Upload `fancy-lifesaver.php` to the `/wp-content/plugins/` directory
+1. Upload `fancy-helper.php` to the `/wp-content/plugins/` directory
 1. Activate the plugin through the 'Plugins' menu in WordPress
 
 == Screenshots ==

@@ -1,46 +1,46 @@
 <?php
 
-namespace Fancybox\Fancy_Lifesaver\Service;
+namespace Fancybox\Fancy_Helper\Service;
 
 class Message_Service
 {
     public function validate(array $form_data, array $files): array
     {
         $errors = [];
-        if (empty($form_data['fancy-lifesaver-name'])) {
+        if (empty($form_data['fancy-helper-name'])) {
             $errors[] = [
-                'path' => 'fancy-lifesaver-name',
-                'message' => __('Empty name', 'fancy-lifesaver'),
+                'path' => 'fancy-helper-name',
+                'message' => __('Empty name', 'fancy-helper'),
             ];
         }
-        if (empty($form_data['fancy-lifesaver-email'])
-            || !filter_var($form_data['fancy-lifesaver-email'], FILTER_VALIDATE_EMAIL)
+        if (empty($form_data['fancy-helper-email'])
+            || !filter_var($form_data['fancy-helper-email'], FILTER_VALIDATE_EMAIL)
         ) {
             $errors[] = [
-                'path' => 'fancy-lifesaver-email',
-                'message' => __('Invalid or empty email', 'fancy-lifesaver'),
+                'path' => 'fancy-helper-email',
+                'message' => __('Invalid or empty email', 'fancy-helper'),
             ];
         }
-        if (empty($form_data['fancy-lifesaver-content'])) {
+        if (empty($form_data['fancy-helper-content'])) {
             $errors[] = [
-                'path' => 'fancy-lifesaver-content',
-                'message' => __('Empty content', 'fancy-lifesaver'),
+                'path' => 'fancy-helper-content',
+                'message' => __('Empty content', 'fancy-helper'),
             ];
         }
-        if (!isset($form_data['fancy-lifesaver-acceptance'])) {
+        if (!isset($form_data['fancy-helper-acceptance'])) {
             $errors[] = [
-                'path' => 'fancy-lifesaver-acceptance',
-                'message' => __('Missing acceptance', 'fancy-lifesaver'),
+                'path' => 'fancy-helper-acceptance',
+                'message' => __('Missing acceptance', 'fancy-helper'),
             ];
         }
-        if (!empty($files['fancy-lifesaver-files'])
-            && !empty($files['fancy-lifesaver-files']['type'])
+        if (!empty($files['fancy-helper-files'])
+            && !empty($files['fancy-helper-files']['type'])
         ) {
-            foreach ($files['fancy-lifesaver-files']['type'] as $type) {
+            foreach ($files['fancy-helper-files']['type'] as $type) {
                 if (strpos($type, 'image/') === false) {
                     $errors[] = [
-                        'path' => 'fancy-lifesaver-files[]',
-                        'message' => __('Invalid file type', 'fancy-lifesaver'),
+                        'path' => 'fancy-helper-files[]',
+                        'message' => __('Invalid file type', 'fancy-helper'),
                     ];
                 }
             }
@@ -52,11 +52,11 @@ class Message_Service
     public function save_tmp_attachments(array $files): array
     {
         $attachments = [];
-        if (!empty($files['fancy-lifesaver-files'] && count($files['fancy-lifesaver-files']))) {
+        if (!empty($files['fancy-helper-files'] && count($files['fancy-helper-files']))) {
             if (!function_exists('wp_handle_upload')) {
                 require_once ABSPATH.'wp-admin/includes/file.php';
             }
-            $files = $files['fancy-lifesaver-files'];
+            $files = $files['fancy-helper-files'];
             foreach ($files['name'] as $key => $value) {
                 $file = [
                     'name' => $files['name'][$key],

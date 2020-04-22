@@ -6,7 +6,7 @@
   line-height: 22px;
 }
 
-.fancy-ls.fancy-lifesaver__modal {
+.fancy-ls.fancy-helper__modal {
   position: fixed;
   top: 0;
   left: 0;
@@ -18,12 +18,12 @@
 }
 
 @media only screen and (max-height: 640px) {
-  .fancy-ls.fancy-lifesaver__modal {
+  .fancy-ls.fancy-helper__modal {
     overflow-y: scroll;
   }
 }
 
-.fancy-ls .fancy-lifesaver__modal-wrap {
+.fancy-ls .fancy-helper__modal-wrap {
   position: absolute;
   top: 50%;
   left: 50%;
@@ -37,7 +37,7 @@
 }
 
 @media only screen and (max-height: 640px) {
-  .fancy-ls .fancy-lifesaver__modal-wrap {
+  .fancy-ls .fancy-helper__modal-wrap {
     position: relative;
     transform: none;
     top: 0;
@@ -48,7 +48,7 @@
   }
 }
 
-.fancy-ls .fancy-lifesaver__modal-header {
+.fancy-ls .fancy-helper__modal-header {
   padding: 20px;
   font-weight: 600;
   padding: 23px 50px 23px 23px;
@@ -59,19 +59,19 @@
   position: relative;
 }
 
-.fancy-ls .fancy-lifesaver__modal-header img {
+.fancy-ls .fancy-helper__modal-header img {
   width: 20px;
   height: auto;
   margin-right: 8px;
   display: inline;
 }
 
-.fancy-ls .fancy-lifesaver__modal-header img,
-.fancy-ls .fancy-lifesaver__modal-header-text {
+.fancy-ls .fancy-helper__modal-header img,
+.fancy-ls .fancy-helper__modal-header-text {
   vertical-align: middle;
 }
 
-.fancy-ls .fancy-lifesaver__modal-close {
+.fancy-ls .fancy-helper__modal-close {
   position: absolute;
   top: 50%;
   right: 18px;
@@ -86,33 +86,33 @@
   height: auto;
 }
 
-.fancy-ls .fancy-lifesaver__modal-close:hover {
+.fancy-ls .fancy-helper__modal-close:hover {
   color: #DB2792;
 }
 
-.fancy-ls .fancy-lifesaver__modal-content {
+.fancy-ls .fancy-helper__modal-content {
   padding: 20px;
 }
 
-.fancy-ls .fancy-lifesaver__modal-field {
+.fancy-ls .fancy-helper__modal-field {
   margin-bottom: 20px;
 }
 
-.fancy-ls .fancy-lifesaver__modal-field.required label:after {
+.fancy-ls .fancy-helper__modal-field.required label:after {
   content: '*';
   margin-left: 3px;
   color: #e30;
   font-weight: 900;
 }
 
-.fancy-ls .fancy-lifesaver__modal-label {
+.fancy-ls .fancy-helper__modal-label {
   display: block;
   margin-bottom: 3px;
   font-size: 13px;
 }
 
-.fancy-ls .fancy-lifesaver__modal-input,
-.fancy-ls .fancy-lifesaver__modal-textarea {
+.fancy-ls .fancy-helper__modal-input,
+.fancy-ls .fancy-helper__modal-textarea {
   width: 100%;
   border-radius: 0 !important;
   border: 1px solid #9d9fa2 !important;
@@ -123,31 +123,31 @@
 
 @media only screen and (max-width: 1024px) {
 
-  .fancy-ls .fancy-lifesaver__modal-input,
-  .fancy-ls .fancy-lifesaver__modal-textarea {
+  .fancy-ls .fancy-helper__modal-input,
+  .fancy-ls .fancy-helper__modal-textarea {
     padding: 2px 5px !important;
   }
 }
 
-.fancy-ls .fancy-lifesaver__modal-textarea {
+.fancy-ls .fancy-helper__modal-textarea {
   height: 80px;
 }
 
-.fancy-ls .fancy-lifesaver__modal-input-checkbox {
+.fancy-ls .fancy-helper__modal-input-checkbox {
   border-radius: 0 !important;
 }
 
-.fancy-ls .fancy-lifesaver__modal-label-checkbox {
+.fancy-ls .fancy-helper__modal-label-checkbox {
   font-size: 13px;
 }
 
 @media only screen and (max-width: 1024px) {
-  .fancy-ls .fancy-lifesaver__modal-input-checkbox {
+  .fancy-ls .fancy-helper__modal-input-checkbox {
     border-radius: 0 !important;
   }
 }
 
-.fancy-ls .fancy-lifesaver__modal-submit {
+.fancy-ls .fancy-helper__modal-submit {
   background: #2BBEB3;
   border: none;
   padding: 7px 30px 7px 20px;
@@ -159,16 +159,16 @@
   text-transform: none;
 }
 
-.fancy-ls .fancy-lifesaver__modal-submit:hover {
+.fancy-ls .fancy-helper__modal-submit:hover {
   background: #FEBF27;
   text-decoration: none;
 }
 
-.fancy-ls .fancy-lifesaver__modal-icons .dashicons {
+.fancy-ls .fancy-helper__modal-icons .dashicons {
   line-height: 21px;
 }
 
-.fancy-ls .fancy-lifesaver__modal-icons .dashicons-image-rotate {
+.fancy-ls .fancy-helper__modal-icons .dashicons-image-rotate {
   display: none;
   font-size: 14px;
   width: 20px;
@@ -177,7 +177,7 @@
   animation: fancy-rotation 2s infinite linear;
 }
 
-.fancy-ls .fancy-lifesaver__modal-icons .dashicons-image-rotate:before {
+.fancy-ls .fancy-helper__modal-icons .dashicons-image-rotate:before {
   position: absolute;
   top: 50%;
   left: 50%;
@@ -194,15 +194,15 @@
   }
 }
 
-.fancy-ls .fancy-lifesaver__modal-submit.fancy-lifesaver__modal-submit--sending .dashicons-yes {
+.fancy-ls .fancy-helper__modal-submit.fancy-helper__modal-submit--sending .dashicons-yes {
   display: none;
 }
 
-.fancy-ls .fancy-lifesaver__modal-submit.fancy-lifesaver__modal-submit--sending .dashicons-image-rotate {
+.fancy-ls .fancy-helper__modal-submit.fancy-helper__modal-submit--sending .dashicons-image-rotate {
   display: inline-block;
 }
 
-.fancy-lifesaver__thumb {
+.fancy-helper__thumb {
   max-width: 100px;
   max-height: 100px;
   height: auto;
@@ -211,7 +211,7 @@
   margin: 0 5px 5px 0;
 }
 
-.fancy-lifesaver__modal-error {
+.fancy-helper__modal-error {
   display: block;
   color: #e30;
   font-size: 13px;
@@ -220,7 +220,7 @@
 /*
  * NOTICE
  */
-.fancy-ls.fancy-lifesaver-notice {
+.fancy-ls.fancy-helper-notice {
   box-sizing: border-box;
   position: fixed;
   z-index: 999999;
@@ -235,14 +235,14 @@
   font-weight: 600;
   font-size: 22px;
   line-height: 22px;
-  background: #fff url('/wp-content/plugins/fancy-lifesaver/assets/svg/fancy-cube.svg') no-repeat left 20px center;
+  background: #fff url('/wp-content/plugins/fancy-helper/assets/svg/fancy-cube.svg') no-repeat left 20px center;
 }
 
-.fancy-ls.fancy-lifesaver-notice.fancy-lifesaver-notice--error {
+.fancy-ls.fancy-helper-notice.fancy-helper-notice--error {
   background-color: #ff7a7a;
 }
 
-.fancy-ls.fancy-lifesaver-notice .dismiss {
+.fancy-ls.fancy-helper-notice .dismiss {
   position: absolute;
   top: 50%;
   transform: translate(0, -50%);
@@ -253,7 +253,7 @@
   text-align: center;
 }
 
-.fancy-ls.fancy-lifesaver-notice .dismiss:before {
+.fancy-ls.fancy-helper-notice .dismiss:before {
   content: "\f335";
   font-family: dashicons;
   line-height: 30px;
@@ -262,13 +262,13 @@
   transition: all 0.1s ease-in;
 }
 
-.fancy-ls.fancy-lifesaver-notice:hover .dismiss {
+.fancy-ls.fancy-helper-notice:hover .dismiss {
   color: #DB2792;
 }
 
 /*
  * ADMIN BAR
  */
-#wp-admin-bar-fancy-lifesaver-help-button {
+#wp-admin-bar-fancy-helper-help-button {
   display: block !important;
 }

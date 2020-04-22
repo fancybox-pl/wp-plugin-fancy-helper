@@ -1,3 +1,3 @@
 <?php
 
-$_ENV['fancy_lifesaver_delivery_address'] = '...@xyz.com';
+$_ENV['fancy_helper_delivery_address'] = '...@xyz.com';

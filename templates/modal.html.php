@@ -1,52 +1,52 @@
-<div id="fancy-lifesaver-modal" class="fancy-ls fancy-lifesaver__modal" style="display: none">
-  <div id="fancy-lifesaver-modal-wrap" class="fancy-lifesaver__modal-wrap">
-    <header class="fancy-lifesaver__modal-header">
-      <img src="<?php echo FANCY_LIFESAVER_PLUGIN_URL.'assets/svg/fancy-cube.svg' ?>">
-      <span class="fancy-lifesaver__modal-header-text"><?php _e('Describe your problem / failure', 'fancy-lifesaver') ?></span>
-      <span id="fancy-lifesaver-close" class="fancy-lifesaver__modal-close dashicons dashicons-no-alt"></span>
+<div id="fancy-helper-modal" class="fancy-ls fancy-helper__modal" style="display: none">
+  <div id="fancy-helper-modal-wrap" class="fancy-helper__modal-wrap">
+    <header class="fancy-helper__modal-header">
+      <img src="<?php echo FANCY_HELPER_PLUGIN_URL.'assets/svg/fancy-cube.svg' ?>">
+      <span class="fancy-helper__modal-header-text"><?php _e('Describe your problem / failure', 'fancy-helper') ?></span>
+      <span id="fancy-helper-close" class="fancy-helper__modal-close dashicons dashicons-no-alt"></span>
     </header>
-    <div class="fancy-lifesaver__modal-content">
-      <form id="fancy-lifesaver-form" enctype="multipart/form-data">
-        <input type="hidden" name="fancy-lifesaver-url" value="http<?php echo(($_SERVER['SERVER_PORT'] == 443) ? 's' : '').'://'.$_SERVER['HTTP_HOST'].$_SERVER['REQUEST_URI'] ?>">
-        <input id="fancy-lifesaver-screen" type="hidden" name="fancy-lifesaver-screen" value="">
-        <div class="fancy-lifesaver__modal-field required">
-          <label for="fancy-lifesaver-name" class="fancy-lifesaver__modal-label"><?php _e('Name and surname / company name', 'fancy-lifesaver') ?></label>
-          <input id="fancy-lifesaver-name" name="fancy-lifesaver-name" type="text" class="fancy-lifesaver__modal-input" required>
+    <div class="fancy-helper__modal-content">
+      <form id="fancy-helper-form" enctype="multipart/form-data">
+        <input type="hidden" name="fancy-helper-url" value="http<?php echo(($_SERVER['SERVER_PORT'] == 443) ? 's' : '').'://'.$_SERVER['HTTP_HOST'].$_SERVER['REQUEST_URI'] ?>">
+        <input id="fancy-helper-screen" type="hidden" name="fancy-helper-screen" value="">
+        <div class="fancy-helper__modal-field required">
+          <label for="fancy-helper-name" class="fancy-helper__modal-label"><?php _e('Name and surname / company name', 'fancy-helper') ?></label>
+          <input id="fancy-helper-name" name="fancy-helper-name" type="text" class="fancy-helper__modal-input" required>
         </div>
-        <div class="fancy-lifesaver__modal-field required">
-          <label for="fancy-lifesaver-email" class="fancy-lifesaver__modal-label"><?php _e('Contact email address', 'fancy-lifesaver') ?></label>
-          <input id="fancy-lifesaver-email" name="fancy-lifesaver-email" type="email" class="fancy-lifesaver__modal-input" required>
+        <div class="fancy-helper__modal-field required">
+          <label for="fancy-helper-email" class="fancy-helper__modal-label"><?php _e('Contact email address', 'fancy-helper') ?></label>
+          <input id="fancy-helper-email" name="fancy-helper-email" type="email" class="fancy-helper__modal-input" required>
         </div>
-        <div class="fancy-lifesaver__modal-field">
-          <label for="fancy-lifesaver-phone" class="fancy-lifesaver__modal-label"><?php _e('Phone number', 'fancy-lifesaver') ?></label>
-          <input id="fancy-lifesaver-phone" name="fancy-lifesaver-phone" type="text" class="fancy-lifesaver__modal-input">
+        <div class="fancy-helper__modal-field">
+          <label for="fancy-helper-phone" class="fancy-helper__modal-label"><?php _e('Phone number', 'fancy-helper') ?></label>
+          <input id="fancy-helper-phone" name="fancy-helper-phone" type="text" class="fancy-helper__modal-input">
         </div>
-        <div class="fancy-lifesaver__modal-field required">
-          <label for="fancy-lifesaver-content" class="fancy-lifesaver__modal-label"><?php _e('Description of the problem', 'fancy-lifesaver') ?></label>
-          <textarea id="fancy-lifesaver-content" name="fancy-lifesaver-content" class="fancy-lifesaver__modal-textarea" required></textarea>
+        <div class="fancy-helper__modal-field required">
+          <label for="fancy-helper-content" class="fancy-helper__modal-label"><?php _e('Description of the problem', 'fancy-helper') ?></label>
+          <textarea id="fancy-helper-content" name="fancy-helper-content" class="fancy-helper__modal-textarea" required></textarea>
         </div>
-        <div class="fancy-lifesaver__modal-field">
-          <label for="fancy-lifesaver-content" class="fancy-lifesaver__modal-label"><?php _e('Screenshot', 'fancy-lifesaver') ?></label>
-          <input id="fancy-lifesaver-files" class="fancy-lifesaver__file-input" type="file" name="fancy-lifesaver-files[]" accept="image/*" multiple>
-          <div id="fancy-lifesaver-files-thumb-wrapp" class="fancy-lifesaver__upload-thumbs">
+        <div class="fancy-helper__modal-field">
+          <label for="fancy-helper-content" class="fancy-helper__modal-label"><?php _e('Screenshot', 'fancy-helper') ?></label>
+          <input id="fancy-helper-files" class="fancy-helper__file-input" type="file" name="fancy-helper-files[]" accept="image/*" multiple>
+          <div id="fancy-helper-files-thumb-wrapp" class="fancy-helper__upload-thumbs">
           </div>
         </div>
-        <div class="fancy-lifesaver__modal-field required">
-          <input id="fancy-lifesaver-acceptance" name="fancy-lifesaver-acceptance" type="checkbox" class="fancy-lifesaver__modal-input-checkbox" required>
-          <label for="fancy-lifesaver-acceptance" class="fancy-lifesaver__modal-label-checkbox">
+        <div class="fancy-helper__modal-field required">
+          <input id="fancy-helper-acceptance" name="fancy-helper-acceptance" type="checkbox" class="fancy-helper__modal-input-checkbox" required>
+          <label for="fancy-helper-acceptance" class="fancy-helper__modal-label-checkbox">
           <?php
             /* translators: %s: delivery email address */
-            printf(__('You agree to send information to the address %s about your website (url, version of the template and plugins, PHP version and information about your browser) and data from this form. The information you submit will be needed to diagnose the problem.', 'fancy-lifesaver'), $_ENV['fancy_lifesaver_delivery_address']);
+            printf(__('You agree to send information to the address %s about your website (url, version of the template and plugins, PHP version and information about your browser) and data from this form. The information you submit will be needed to diagnose the problem.', 'fancy-helper'), $_ENV['fancy_helper_delivery_address']);
           ?>
           </label>
         </div>
-        <div class="fancy-lifesaver__modal-field" style="text-align: center">
-          <button id="fancy-lifesaver-submit" class="fancy-lifesaver__modal-submit">
-            <span class="fancy-lifesaver__modal-icons">
+        <div class="fancy-helper__modal-field" style="text-align: center">
+          <button id="fancy-helper-submit" class="fancy-helper__modal-submit">
+            <span class="fancy-helper__modal-icons">
               <span class="dashicons dashicons-yes"></span>
               <span class="dashicons dashicons-image-rotate"></span>
             </span>
-            <?php _e('Send', 'fancy-lifesaver') ?>
+            <?php _e('Send', 'fancy-helper') ?>
           </button>
         </div>
       </form>

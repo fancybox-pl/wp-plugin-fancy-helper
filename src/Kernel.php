@@ -1,17 +1,17 @@
 <?php
 
-namespace Fancybox\Fancy_Lifesaver;
+namespace Fancybox\Fancy_Helper;
 
-use Fancybox\Fancy_Lifesaver\Controller\Admin_Controller;
-use Fancybox\Fancy_Lifesaver\Controller\Front_Controller;
-use Fancybox\Fancy_Lifesaver\Router;
+use Fancybox\Fancy_Helper\Controller\Admin_Controller;
+use Fancybox\Fancy_Helper\Controller\Front_Controller;
+use Fancybox\Fancy_Helper\Router;
 
 class Kernel
 {
-    const VERSION = FANCY_LIFESAVER_VERSION;
-    const PLUGIN_URL = FANCY_LIFESAVER_PLUGIN_URL;
-    const PLUGIN_DIR = FANCY_LIFESAVER_PLUGIN_DIR;
-    const PLUGIN_BASENAME = FANCY_LIFESAVER_PLUGIN_BASENAME;
+    const VERSION = FANCY_HELPER_VERSION;
+    const PLUGIN_URL = FANCY_HELPER_PLUGIN_URL;
+    const PLUGIN_DIR = FANCY_HELPER_PLUGIN_DIR;
+    const PLUGIN_BASENAME = FANCY_HELPER_PLUGIN_BASENAME;
 
     private $adminController;
     private $frontController;
@@ -39,16 +39,16 @@ class Kernel
 
     public function load_languages()
     {
-        load_plugin_textdomain('fancy-lifesaver', false, '/fancy-lifesaver/languages/');
+        load_plugin_textdomain('fancy-helper', false, '/fancy-helper/languages/');
     }
 
     public function admin_bar_link(\WP_Admin_Bar $admin_bar)
     {
-        if (!is_admin() && !empty(get_option('fancy_lifesaver_admin_bar_link_visible', 1))) {
+        if (!is_admin() && !empty(get_option('fancy_helper_admin_bar_link_visible', 1))) {
             $icon = '<span class="ab-icon dashicons dashicons-sos"></span>';
-            $title = __('Help', 'fancy-lifesaver');
+            $title = __('Help', 'fancy-helper');
             $admin_bar->add_menu([
-                'id' => 'fancy-lifesaver-help-button',
+                'id' => 'fancy-helper-help-button',
                 'title' => $icon.' <span class="ab-label">'.$title.'</span>',
                 'href' => '#',
             ]);
@@ -57,8 +57,8 @@ class Kernel
 
     public function plugin_action_links(array $links_array): array
     {
-        $settings_url = admin_url('options-general.php?page=fancy_lifesaver');
-        $settings_title = __('Settings', 'fancy-lifesaver');
+        $settings_url = admin_url('options-general.php?page=fancy_helper');
+        $settings_title = __('Settings', 'fancy-helper');
 
         array_unshift($links_array, '<a href="'.$settings_url.'">'.$settings_title.'</a>');
 

@@ -1,8 +1,8 @@
 <?php
 
-namespace Fancybox\Fancy_Lifesaver\Controller;
+namespace Fancybox\Fancy_Helper\Controller;
 
-use Fancybox\Fancy_Lifesaver\Kernel;
+use Fancybox\Fancy_Helper\Kernel;
 
 class Front_Controller
 {

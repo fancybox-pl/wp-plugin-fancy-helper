@@ -1,8 +1,8 @@
 <?php
 
-namespace Fancybox\Fancy_Lifesaver\Controller;
+namespace Fancybox\Fancy_Helper\Controller;
 
-use Fancybox\Fancy_Lifesaver\Kernel;
+use Fancybox\Fancy_Helper\Kernel;
 
 class Admin_Controller
 {
@@ -25,18 +25,18 @@ class Admin_Controller
     public function options_page()
     {
         add_options_page(
-            'Fancy Lifesaver '.__('Settings', 'fancy-lifesaver'),
-            'Fancy Lifesaver',
+            'Fancy Helper '.__('Settings', 'fancy-helper'),
+            'Fancy Helper',
             'manage_options',
-            'fancy_lifesaver',
+            'fancy_helper',
             [$this, 'options_template']
         );
     }
 
     public function options_register()
     {
-        register_setting('fancy_lifesaver_plugin_page', 'fancy_lifesaver_lifebuoy_visible');
-        register_setting('fancy_lifesaver_plugin_page', 'fancy_lifesaver_admin_bar_link_visible');
+        register_setting('fancy_helper_plugin_page', 'fancy_helper_lifebuoy_visible');
+        register_setting('fancy_helper_plugin_page', 'fancy_helper_admin_bar_link_visible');
     }
 
     public function options_template()

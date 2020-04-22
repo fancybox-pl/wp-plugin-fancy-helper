@@ -1,5 +1,5 @@
 {
-    "name": "fancybox/fancy-lifesaver",
+    "name": "fancybox/fancy-helper",
     "description": "Lifebuoy for your Wordpress.",
     "type": "wordpress-plugin",
     "version": "1.0.0",
@@ -15,7 +15,7 @@
     "require": {},
     "autoload": {
         "psr-4": {
-            "Fancybox\\Fancy_Lifesaver\\": "src/"
+            "Fancybox\\Fancy_Helper\\": "src/"
         }
     }
 }

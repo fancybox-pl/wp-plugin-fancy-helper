@@ -4,7 +4,7 @@
  * @link       https://www.fancybox.pl/
  * @since      1.0.0
  *
- * @package    Fancy_Lifesaver
+ * @package    Fancy_Helper
  */
 
 // If uninstall not called from WordPress, then exit.

@@ -1,14 +1,14 @@
 class FancyLivesaver {
   constructor() {
-    this.modalElem = document.querySelector('#fancy-lifesaver-modal');
-    this.closeBtnElem = document.querySelector('#fancy-lifesaver-close');
-    this.showWidgetBtnElem = document.querySelector('#fancy-lifesaver-show');
-    this.showAdminBarBtnElem = document.querySelector('#wp-admin-bar-fancy-lifesaver-help-button');
-    this.formElem = document.querySelector('#fancy-lifesaver-form');
-    this.submitElem = document.querySelector('#fancy-lifesaver-submit');
-    this.screenInput = document.querySelector('#fancy-lifesaver-screen');
-    this.filesInput = document.querySelector('#fancy-lifesaver-files');
-    this.filesThumbWrapp = document.querySelector('#fancy-lifesaver-files-thumb-wrapp');
+    this.modalElem = document.querySelector('#fancy-helper-modal');
+    this.closeBtnElem = document.querySelector('#fancy-helper-close');
+    this.showWidgetBtnElem = document.querySelector('#fancy-helper-show');
+    this.showAdminBarBtnElem = document.querySelector('#wp-admin-bar-fancy-helper-help-button');
+    this.formElem = document.querySelector('#fancy-helper-form');
+    this.submitElem = document.querySelector('#fancy-helper-submit');
+    this.screenInput = document.querySelector('#fancy-helper-screen');
+    this.filesInput = document.querySelector('#fancy-helper-files');
+    this.filesThumbWrapp = document.querySelector('#fancy-helper-files-thumb-wrapp');
 
     if (!this.modalElem || !this.formElem) {
       return;
@@ -40,7 +40,7 @@ class FancyLivesaver {
       if (this.filesThumbWrapp) {
         this.filesThumbWrapp.innerHTML = '';
       }
-      this.submitElem.classList.remove('fancy-lifesaver__modal-submit--sending');
+      this.submitElem.classList.remove('fancy-helper__modal-submit--sending');
     }, 200);
   }
 
@@ -55,12 +55,12 @@ class FancyLivesaver {
   formSubmitEventHandler(e) {
     e.preventDefault();
     const formData = new FormData(this.formElem);
-    this.submitElem.classList.add('fancy-lifesaver__modal-submit--sending');
-    document.querySelectorAll('.fancy-lifesaver__modal-error').forEach((elem) => {
+    this.submitElem.classList.add('fancy-helper__modal-submit--sending');
+    document.querySelectorAll('.fancy-helper__modal-error').forEach((elem) => {
       elem.remove();
     });
 
-    fetch('/wp-json/fancy-lifesaver/help', {
+    fetch('/wp-json/fancy-helper/help', {
         method: 'post',
         body: formData,
       })
@@ -75,7 +75,7 @@ class FancyLivesaver {
               let elem = document.querySelector(`[name="${error.path}"]`);
               if (elem) {
                 let message = document.createElement('span');
-                message.classList.add('fancy-lifesaver__modal-error');
+                message.classList.add('fancy-helper__modal-error');
                 message.innerHTML = error.message;
                 elem.parentElement.appendChild(message);
               }
@@ -84,7 +84,7 @@ class FancyLivesaver {
             this.notice(response.data, 'error');
             this.closeModal();
           }
-          this.submitElem.classList.remove('fancy-lifesaver__modal-submit--sending');
+          this.submitElem.classList.remove('fancy-helper__modal-submit--sending');
         }
       })
       .catch((error) => console.error('Error:', error));
@@ -92,9 +92,9 @@ class FancyLivesaver {
 
   notice(message = '', type = '') {
     const notice = document.createElement('div');
-    notice.classList.add('fancy-ls', 'fancy-lifesaver-notice');
+    notice.classList.add('fancy-ls', 'fancy-helper-notice');
     if ('error' == type) {
-      notice.classList.add('fancy-lifesaver-notice--error');
+      notice.classList.add('fancy-helper-notice--error');
     }
     notice.innerHTML = message;
 
@@ -120,7 +120,7 @@ class FancyLivesaver {
       let reader = new FileReader();
       reader.onloadend = () => {
         const img = document.createElement('img');
-        img.classList.add('fancy-lifesaver__thumb');
+        img.classList.add('fancy-helper__thumb');
         img.src = reader.result;
         this.filesThumbWrapp.appendChild(img);
       }
