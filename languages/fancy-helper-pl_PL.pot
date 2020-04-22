@@ -110,7 +110,7 @@ msgstr "Wystąpił błąd"
 
 #: src/Controller/Api_Controller.php:67
 msgid "Message was send"
-msgstr "Wiadmość została wysłana"
+msgstr "Wiadomość została wysłana"
 
 #: src/Kernel.php:49
 #: templates/widget.html.php:4
