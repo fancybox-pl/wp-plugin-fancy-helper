@@ -141,10 +141,12 @@
 
 .fancy-ls .fancy-helper__modal-input-checkbox {
   border-radius: 0 !important;
+  margin: 0 !important;
 }
 
 .fancy-ls .fancy-helper__modal-label-checkbox {
   font-size: 13px;
+  display: inline !important;
 }
 
 @media only screen and (max-width: 1024px) {
