@@ -1,7 +1,7 @@
 <?php
 
 /**
- * @link       https://www.fancybox.pl/
+ * @link       https://www.maximum.pl/
  * @since      1.0.0
  *
  * @package    Fancy_Helper

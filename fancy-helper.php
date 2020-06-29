@@ -1,7 +1,7 @@
 <?php
 
 /**
- * @link              https://www.fancybox.pl/
+ * @link              https://www.maximum.pl/
  * @since             1.0.0
  * @package           Fancy_Helper
  *
@@ -9,8 +9,8 @@
  * Plugin Name:       Fancy Helper
  * Description:       Lifebuoy for your Wordpress. If you have a problem with your site, it works too slowly, something has spilled out, or maybe you want to refresh appearance, change the functionality? You don't know how to do it? Use the lifebuoy and write to us and we will professionally take care of your website.
  * Version:           1.0.0
- * Author:            FancyBox
- * Author URI:        https://www.fancybox.pl/
+ * Author:            Maximum Interactive
+ * Author URI:        https://www.maximum.pl/
  * License:           GPL-2.0+
  * License URI:       http://www.gnu.org/licenses/gpl-2.0.txt
  * Text Domain:       fancy-helper
